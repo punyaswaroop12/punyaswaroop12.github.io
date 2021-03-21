@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dimensionality reduction on Akhilesh Reddy</title>
-    <link>https://akhilesh-reddy.github.io/tags/dimensionality-reduction/</link>
+    <link>https://punyaswaroop12.github.io/tags/dimensionality-reduction/</link>
     <description>Recent content in dimensionality reduction on Akhilesh Reddy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Fri, 19 Jan 2018 06:31:29 -0500</lastBuildDate>
     
-	<atom:link href="https://akhilesh-reddy.github.io/tags/dimensionality-reduction/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://punyaswaroop12.github.io/tags/dimensionality-reduction/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Author attribution using TF-IDF, PCA and Randomforest</title>
-      <link>https://akhilesh-reddy.github.io/project/author-attribution/</link>
+      <link>https://punyaswaroop12.github.io/project/author-attribution/</link>
       <pubDate>Fri, 19 Jan 2018 06:31:29 -0500</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/project/author-attribution/</guid>
+      <guid>https://punyaswaroop12.github.io/project/author-attribution/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Car brand association analysis using web scraped data</title>
-      <link>https://akhilesh-reddy.github.io/project/edmunds-and-car-brand-association/</link>
+      <link>https://punyaswaroop12.github.io/project/edmunds-and-car-brand-association/</link>
       <pubDate>Fri, 19 Jan 2018 06:31:29 -0500</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/project/edmunds-and-car-brand-association/</guid>
+      <guid>https://punyaswaroop12.github.io/project/edmunds-and-car-brand-association/</guid>
       <description></description>
     </item>
     

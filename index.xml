@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Akhilesh Reddy on Akhilesh Reddy</title>
-    <link>https://akhilesh-reddy.github.io/</link>
+    <link>https://punyaswaroop12.github.io/</link>
     <description>Recent content in Akhilesh Reddy on Akhilesh Reddy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,50 +12,50 @@
     
     <item>
       <title>Recommender system using Bayesian personalized ranking</title>
-      <link>https://akhilesh-reddy.github.io/post/bpr/</link>
+      <link>https://punyaswaroop12.github.io/post/bpr/</link>
       <pubDate>Mon, 04 Feb 2019 00:00:00 -0600</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/post/bpr/</guid>
+      <guid>https://punyaswaroop12.github.io/post/bpr/</guid>
       <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/recommender-system-using-bayesian-personalized-ranking-d30e98bba0b9&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>How Twitter does it? Challenges in implementing recommender systems at scale</title>
-      <link>https://akhilesh-reddy.github.io/post/twitter/</link>
+      <link>https://punyaswaroop12.github.io/post/twitter/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/post/twitter/</guid>
+      <guid>https://punyaswaroop12.github.io/post/twitter/</guid>
       <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/how-twitter-does-it-challenges-in-implementing-recommender-systems-at-scale-353f7a1ae4ab&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Sketch recognition using Mobilenet</title>
-      <link>https://akhilesh-reddy.github.io/post/sketch-recognition/</link>
+      <link>https://punyaswaroop12.github.io/post/sketch-recognition/</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/post/sketch-recognition/</guid>
+      <guid>https://punyaswaroop12.github.io/post/sketch-recognition/</guid>
       <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/doodling-with-deep-learning-1b0e11b858aa&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Scraping Reddit data using Python and Google BigQuery</title>
-      <link>https://akhilesh-reddy.github.io/post/medium/</link>
+      <link>https://punyaswaroop12.github.io/post/medium/</link>
       <pubDate>Sat, 26 Jan 2019 00:00:00 -0600</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/post/medium/</guid>
+      <guid>https://punyaswaroop12.github.io/post/medium/</guid>
       <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/scrape-reddit-data-using-python-and-google-bigquery-44180b579892&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>ML Algorithms 4:Introduction to Boosting and the famous XGBoost</title>
-      <link>https://akhilesh-reddy.github.io/post/xgboost-and-lightxgboost/</link>
+      <link>https://punyaswaroop12.github.io/post/xgboost-and-lightxgboost/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 -0600</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/post/xgboost-and-lightxgboost/</guid>
+      <guid>https://punyaswaroop12.github.io/post/xgboost-and-lightxgboost/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way&lt;/strong&gt;&lt;br /&gt;
@@ -71,12 +71,12 @@ This helps those models to actually build on top of the mistakes and give faster
 &lt;p&gt;We all know boosting models belong to the family of ensemble methods which tend to produce strong learners by combining multiple weak learners.
 Following is the picture that briefly explains the different kinds of ensembling.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/ensembling.png&#34; alt=&#34;ensembling&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://punyaswaroop12.github.io/img/ensembling.png&#34; alt=&#34;ensembling&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Boosting is mainly different from bagging for one and only reason - sequential learning. In boosting, the model learns from its mistakes sequentially whereas in bagging the ensembling happens at the last step.
 Here, we take the residuals of the first model and build model on top of the residuals sequentially to identify the patterns that are not identified by the first model.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/gradient boosting.png&#34; alt=&#34;Gradient boosting&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://punyaswaroop12.github.io/img/gradient boosting.png&#34; alt=&#34;Gradient boosting&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;adaboost&#34;&gt;Adaboost:&lt;/h3&gt;
 
@@ -85,7 +85,7 @@ You can see below at each step, the decision stump is decided based on the weigh
 In the final step, all these decisions combined together will give the classification of the dataset.&lt;br /&gt;
 For detailed mathematical explanation, you can refer &lt;a href=&#34;https://en.wikipedia.org/wiki/AdaBoost&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/adaboost.png&#34; alt=&#34;Adaboost&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://punyaswaroop12.github.io/img/adaboost.png&#34; alt=&#34;Adaboost&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;However, there are some limitations to Adaboost model:&lt;br /&gt;
 1. They are sensitive to noisy and pose the risk of assigning more weight to noise&lt;br /&gt;
@@ -103,8 +103,8 @@ This class of algorithms were also described as a stage-wise additive model. Thi
 This is generally called gradient descent in functional space. This process is repeated at each step till we arrive at the specified number of trees to be used or by early stopping.&lt;/p&gt;
 
 &lt;p&gt;By the end of the final iteration, we would have arrived at a model that had learnt from the mistakes of the previous models sequentially and gives out the best predictions.&lt;br /&gt;
-&lt;img src=&#34;https://akhilesh-reddy.github.io/img/iter1.png&#34; alt=&#34;iter1&#34; /&gt;
-&lt;img src=&#34;https://akhilesh-reddy.github.io/img/iter50.png&#34; alt=&#34;iter50&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://punyaswaroop12.github.io/img/iter1.png&#34; alt=&#34;iter1&#34; /&gt;
+&lt;img src=&#34;https://punyaswaroop12.github.io/img/iter50.png&#34; alt=&#34;iter50&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We could should be cautious of overfitting as we increase the number of iterations for a given dataset and this warrants the use of regularization parameters.&lt;/p&gt;
 
@@ -116,7 +116,7 @@ This is generally called gradient descent in functional space. This process is r
 
 &lt;h3 id=&#34;xgboost&#34;&gt;XGBoost:&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/xgb1.png&#34; alt=&#34;JCM&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://punyaswaroop12.github.io/img/xgb1.png&#34; alt=&#34;JCM&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you are part of the Kaggle eco system, then there is high chance that you would have heard about XGboost algorithm and its potential to deliver results with high speed and performance.&lt;/p&gt;
 
@@ -155,14 +155,14 @@ Happy learning!&lt;/p&gt;
     
     <item>
       <title>ML Algorithms 3: Bagging and Random forests </title>
-      <link>https://akhilesh-reddy.github.io/post/bagging-and-random-forests/</link>
+      <link>https://punyaswaroop12.github.io/post/bagging-and-random-forests/</link>
       <pubDate>Mon, 21 Jan 2019 00:00:00 -0600</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/post/bagging-and-random-forests/</guid>
+      <guid>https://punyaswaroop12.github.io/post/bagging-and-random-forests/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&#34;https://akhilesh-reddy.github.io/img/ensembling.png&#34; alt=&#34;ensembling&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://punyaswaroop12.github.io/img/ensembling.png&#34; alt=&#34;ensembling&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;bagging&#34;&gt;&lt;strong&gt;Bagging&lt;/strong&gt;&lt;/h2&gt;
 
@@ -182,7 +182,7 @@ If we have multiple trees that are uncorrelated, in other words, if they have hi
 
 &lt;h2 id=&#34;random-forest&#34;&gt;&lt;strong&gt;Random Forest&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/rf1.jpg&#34; alt=&#34;rf&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://punyaswaroop12.github.io/img/rf1.jpg&#34; alt=&#34;rf&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;introduction-1&#34;&gt;Introduction&lt;/h3&gt;
 
@@ -265,41 +265,41 @@ print(paste0(&amp;quot;Accuracy is &amp;quot;, rf_accuracy))
     
     <item>
       <title>Music recommendation engine using ALS based Matrix factorization</title>
-      <link>https://akhilesh-reddy.github.io/project/music-recommendation/</link>
+      <link>https://punyaswaroop12.github.io/project/music-recommendation/</link>
       <pubDate>Sat, 19 Jan 2019 06:31:29 -0500</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/project/music-recommendation/</guid>
+      <guid>https://punyaswaroop12.github.io/project/music-recommendation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sketch recognition using Mobilenet</title>
-      <link>https://akhilesh-reddy.github.io/project/sketch-recognition/</link>
+      <link>https://punyaswaroop12.github.io/project/sketch-recognition/</link>
       <pubDate>Sat, 19 Jan 2019 06:31:29 -0500</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/project/sketch-recognition/</guid>
+      <guid>https://punyaswaroop12.github.io/project/sketch-recognition/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Visualizing different factors that affect Austin bike sharing and recommendations for bike rebalancing </title>
-      <link>https://akhilesh-reddy.github.io/project/austin-bike-sharing/</link>
+      <link>https://punyaswaroop12.github.io/project/austin-bike-sharing/</link>
       <pubDate>Sat, 19 Jan 2019 06:31:29 -0500</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/project/austin-bike-sharing/</guid>
+      <guid>https://punyaswaroop12.github.io/project/austin-bike-sharing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ML Algorithms 2: Decision trees</title>
-      <link>https://akhilesh-reddy.github.io/post/decision-trees/</link>
+      <link>https://punyaswaroop12.github.io/post/decision-trees/</link>
       <pubDate>Sat, 19 Jan 2019 00:00:00 -0600</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/post/decision-trees/</guid>
+      <guid>https://punyaswaroop12.github.io/post/decision-trees/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&#34;https://akhilesh-reddy.github.io/img/decision tree.png&#34; alt=&#34;decision tree&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://punyaswaroop12.github.io/img/decision tree.png&#34; alt=&#34;decision tree&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
 
@@ -315,10 +315,10 @@ In this case, there are multiple methods that are used to determine the best var
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Gini index : Gini index gives a measure of total variance across all the classes and the smaller Gini index indicates higher node purity.&lt;br /&gt;
-&lt;img src=&#34;https://akhilesh-reddy.github.io/img/gini index.jpg&#34; alt=&#34;gini&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;https://punyaswaroop12.github.io/img/gini index.jpg&#34; alt=&#34;gini&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Entropy : This metric is used to calculate the purity of child nodes that are created after splitting the parent node. Higher the purity of the child nodes, lesser is the entropy.&lt;br /&gt;
-&lt;img src=&#34;https://akhilesh-reddy.github.io/img/entropy.png&#34; alt=&#34;entropy&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;img src=&#34;https://punyaswaroop12.github.io/img/entropy.png&#34; alt=&#34;entropy&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Chi-square : Chi-square value is calculated for each variable for the available data at that step of the decision tree. Higher the chi-square value, higher is the important of the variable.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -351,39 +351,39 @@ This method is more technically called &amp;ldquo;Cost-complexity pruning&amp;rd
     
     <item>
       <title>Cable-cord cutter sentiment analysis using Reddit data</title>
-      <link>https://akhilesh-reddy.github.io/project/cable-cord-cutters-sentiment-analysis-using-reddit-data/</link>
+      <link>https://punyaswaroop12.github.io/project/cable-cord-cutters-sentiment-analysis-using-reddit-data/</link>
       <pubDate>Fri, 18 Jan 2019 06:31:29 -0500</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/project/cable-cord-cutters-sentiment-analysis-using-reddit-data/</guid>
+      <guid>https://punyaswaroop12.github.io/project/cable-cord-cutters-sentiment-analysis-using-reddit-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Salary prediction based on job description using XGboost</title>
-      <link>https://akhilesh-reddy.github.io/project/salary-prediction-based-on-job-description/</link>
+      <link>https://punyaswaroop12.github.io/project/salary-prediction-based-on-job-description/</link>
       <pubDate>Fri, 18 Jan 2019 06:31:29 -0500</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/project/salary-prediction-based-on-job-description/</guid>
+      <guid>https://punyaswaroop12.github.io/project/salary-prediction-based-on-job-description/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ML Algorithms 1:Logistic Regression</title>
-      <link>https://akhilesh-reddy.github.io/post/logistic-regression/</link>
+      <link>https://punyaswaroop12.github.io/post/logistic-regression/</link>
       <pubDate>Sun, 13 Jan 2019 00:00:00 -0600</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/post/logistic-regression/</guid>
+      <guid>https://punyaswaroop12.github.io/post/logistic-regression/</guid>
       <description>
 
 &lt;p&gt;This is my first post of a series of summaries of machine learning algorithms. I personally took this up to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others.
 In this post, i would be talking about logistic regression which is still very widely used for classification in multiple industries.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/log reg.png&#34; alt=&#34;JCM&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://punyaswaroop12.github.io/img/log reg.png&#34; alt=&#34;JCM&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
 
 &lt;p&gt;Logistic regression is primarily a binary classifier which is used when the dependent variable is a categorical variable. Although, we know that linear regression is used for a dependent continuous variable,it might be tempting to use linear regression for a classification task. But we should be aware of the fact that final prediction of linear regression can go beyond 1 and be less than 0 which are not acceptable as a probability value.
-&lt;img src=&#34;https://akhilesh-reddy.github.io/img/logreg.jpg&#34; alt=&#34;JCM&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://punyaswaroop12.github.io/img/logreg.jpg&#34; alt=&#34;JCM&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So this takes us to the next step of logistic regression which is the logit function.&lt;/p&gt;
 
@@ -393,7 +393,7 @@ In this post, i would be talking about logistic regression which is still very w
 $${Pr}(Y=1/ {X}) = \frac{\text{e}^{\beta X}}{1 + \text{e}^{\beta X}}$$&lt;br/&gt;``&lt;/p&gt;
 
 &lt;p&gt;It is also called sigmoid function.
-&lt;img src=&#34;https://akhilesh-reddy.github.io/img/sigmoid.png&#34; alt=&#34;sigmoid&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://punyaswaroop12.github.io/img/sigmoid.png&#34; alt=&#34;sigmoid&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Logit function restricts the final prediction value between 0 and 1 and would help in making the final classfication by using a threshold value. Lets go ahead and understand how logistic regression works.&lt;/p&gt;
 
@@ -500,19 +500,19 @@ auc_ROCR
     
     <item>
       <title>Association between grocery items using Apriori algorithm and Gephi visualization</title>
-      <link>https://akhilesh-reddy.github.io/project/association-between-retail-items/</link>
+      <link>https://punyaswaroop12.github.io/project/association-between-retail-items/</link>
       <pubDate>Fri, 19 Jan 2018 06:31:29 -0500</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/project/association-between-retail-items/</guid>
+      <guid>https://punyaswaroop12.github.io/project/association-between-retail-items/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Author attribution using TF-IDF, PCA and Randomforest</title>
-      <link>https://akhilesh-reddy.github.io/project/author-attribution/</link>
+      <link>https://punyaswaroop12.github.io/project/author-attribution/</link>
       <pubDate>Fri, 19 Jan 2018 06:31:29 -0500</pubDate>
       
-      <guid>https://akhilesh-reddy.github.io/project/author-attribution/</guid>
+      <guid>https://punyaswaroop12.github.io/project/author-attribution/</guid>
       <description></description>
     </item>
     

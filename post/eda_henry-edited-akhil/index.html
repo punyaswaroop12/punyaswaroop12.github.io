@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 
   <meta charset="utf-8">
@@ -9,304 +10,316 @@
   <meta name="generator" content="Hugo 0.52" />
   <meta name="author" content="Akhilesh Reddy">
 
-  
-  
-  
-  
-    
-      
-    
-  
-  <meta name="description" content="from datetime import * from gmplot import gmplot import pandas as pd %pylab inline import matplotlib.pyplot as plt import seaborn as sns from matplotlib.pyplot import figure  Populating the interactive namespace from numpy and matplotlib C:\Users\Akhil\Anaconda2\lib\site-packages\IPython\core\magics\pylab.py:161: UserWarning: pylab import has clobbered these variables: [&#39;datetime&#39;, &#39;time&#39;] `%matplotlib` prevents importing * from pylab and numpy &quot;\n`%matplotlib` prevents importing * from pylab and numpy&quot;  train = pd.DataFrame({&#39;id&#39;:[1,2,4],&#39;features&#39;:[[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;],[&quot;C&quot;,&quot;D&quot;,&quot;F&quot;]]})  train[&#39;features_t&#39;] = train[&quot;features&quot;].apply(lambda x: &quot; &quot;.">
-
-  
-  <link rel="alternate" hreflang="en-us" href="https://akhilesh-reddy.github.io/post/eda_henry-edited-akhil/">
-
-  
 
 
-  
 
-  
-  
+
+
+
+
+
+  <meta name="description"
+    content="from datetime import * from gmplot import gmplot import pandas as pd %pylab inline import matplotlib.pyplot as plt import seaborn as sns from matplotlib.pyplot import figure  Populating the interactive namespace from numpy and matplotlib C:\Users\Akhil\Anaconda2\lib\site-packages\IPython\core\magics\pylab.py:161: UserWarning: pylab import has clobbered these variables: [&#39;datetime&#39;, &#39;time&#39;] `%matplotlib` prevents importing * from pylab and numpy &quot;\n`%matplotlib` prevents importing * from pylab and numpy&quot;  train = pd.DataFrame({&#39;id&#39;:[1,2,4],&#39;features&#39;:[[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;],[&quot;C&quot;,&quot;D&quot;,&quot;F&quot;]]})  train[&#39;features_t&#39;] = train[&quot;features&quot;].apply(lambda x: &quot; &quot;.">
+
+
+  <link rel="alternate" hreflang="en-us" href="https://punyaswaroop12.github.io/post/eda_henry-edited-akhil/">
+
+
+
+
+
+
+
+
   <meta name="theme-color" content="#4caf50">
-  
-  
-  
-  
-    
-  
-  
-    
-    
-      
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-      
-    
-  
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
-  
-  
-  
-  
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
-  
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw=="
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css"
+    integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A=="
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css"
+    integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+
+
+
+  <link rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+
   <link rel="stylesheet" href="/styles.css">
-  
 
-  
 
-  
-  <link rel="alternate" href="https://akhilesh-reddy.github.io/index.xml" type="application/rss+xml" title="Akhilesh Reddy">
-  <link rel="feed" href="https://akhilesh-reddy.github.io/index.xml" type="application/rss+xml" title="Akhilesh Reddy">
-  
+
+
+
+  <link rel="alternate" href="https://punyaswaroop12.github.io/index.xml" type="application/rss+xml"
+    title="Akhilesh Reddy">
+  <link rel="feed" href="https://punyaswaroop12.github.io/index.xml" type="application/rss+xml" title="Akhilesh Reddy">
+
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://akhilesh-reddy.github.io/post/eda_henry-edited-akhil/">
+  <link rel="canonical" href="https://punyaswaroop12.github.io/post/eda_henry-edited-akhil/">
 
   <meta property="twitter:card" content="summary_large_image">
-  
+
   <meta property="twitter:site" content="@https://twitter.com/akhileshreddy44">
   <meta property="twitter:creator" content="@https://twitter.com/akhileshreddy44">
-  
-  <meta property="og:site_name" content="Akhilesh Reddy">
-  <meta property="og:url" content="https://akhilesh-reddy.github.io/post/eda_henry-edited-akhil/">
-  <meta property="og:title" content=" | Akhilesh Reddy">
-  <meta property="og:description" content="from datetime import * from gmplot import gmplot import pandas as pd %pylab inline import matplotlib.pyplot as plt import seaborn as sns from matplotlib.pyplot import figure  Populating the interactive namespace from numpy and matplotlib C:\Users\Akhil\Anaconda2\lib\site-packages\IPython\core\magics\pylab.py:161: UserWarning: pylab import has clobbered these variables: [&#39;datetime&#39;, &#39;time&#39;] `%matplotlib` prevents importing * from pylab and numpy &quot;\n`%matplotlib` prevents importing * from pylab and numpy&quot;  train = pd.DataFrame({&#39;id&#39;:[1,2,4],&#39;features&#39;:[[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;],[&quot;C&quot;,&quot;D&quot;,&quot;F&quot;]]})  train[&#39;features_t&#39;] = train[&quot;features&quot;].apply(lambda x: &quot; &quot;.">
-  <meta property="og:locale" content="en-us">
-  
-  
-  
-  
 
-  
+  <meta property="og:site_name" content="Akhilesh Reddy">
+  <meta property="og:url" content="https://punyaswaroop12.github.io/post/eda_henry-edited-akhil/">
+  <meta property="og:title" content=" | Akhilesh Reddy">
+  <meta property="og:description"
+    content="from datetime import * from gmplot import gmplot import pandas as pd %pylab inline import matplotlib.pyplot as plt import seaborn as sns from matplotlib.pyplot import figure  Populating the interactive namespace from numpy and matplotlib C:\Users\Akhil\Anaconda2\lib\site-packages\IPython\core\magics\pylab.py:161: UserWarning: pylab import has clobbered these variables: [&#39;datetime&#39;, &#39;time&#39;] `%matplotlib` prevents importing * from pylab and numpy &quot;\n`%matplotlib` prevents importing * from pylab and numpy&quot;  train = pd.DataFrame({&#39;id&#39;:[1,2,4],&#39;features&#39;:[[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;],[&quot;C&quot;,&quot;D&quot;,&quot;F&quot;]]})  train[&#39;features_t&#39;] = train[&quot;features&quot;].apply(lambda x: &quot; &quot;.">
+  <meta property="og:locale" content="en-us">
+
+
+
+
+
+
 
   <title> | Akhilesh Reddy</title>
 
 </head>
-<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
 
-<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
-  <div class="container">
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71">
 
-    
-    <div class="navbar-header">
-      
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-              data-target=".navbar-collapse" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-      <a class="navbar-brand" href="/">Akhilesh Reddy</a>
+  <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="/">Akhilesh Reddy</a>
+      </div>
+
+
+      <div class="collapse navbar-collapse">
+
+
+
+        <ul class="nav navbar-nav navbar-right">
+
+
+
+
+
+
+
+
+
+
+          <li class="nav-item">
+            <a href="/#about">
+
+              <span>Home</span>
+
+            </a>
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+          <li class="nav-item">
+            <a href="/docs/resume.pdf">
+
+              <span>Resume</span>
+
+            </a>
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+          <li class="nav-item">
+            <a href="/#projects">
+
+              <span>Projects</span>
+
+            </a>
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+          <li class="nav-item">
+            <a href="/#posts">
+
+              <span>Posts</span>
+
+            </a>
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+          <li class="nav-item">
+            <a href="/#contact">
+
+              <span>Contact</span>
+
+            </a>
+          </li>
+
+
+
+
+
+
+        </ul>
+
+      </div>
     </div>
-
-    
-    <div class="collapse navbar-collapse">
-
-      
-      
-      <ul class="nav navbar-nav navbar-right">
-        
-
-        
-        
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a href="/#about">
-            
-            <span>Home</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-        
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a href="/docs/resume.pdf">
-            
-            <span>Resume</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-        
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a href="/#projects">
-            
-            <span>Projects</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-        
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a href="/#posts">
-            
-            <span>Posts</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-        
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a href="/#contact">
-            
-            <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
-      
-
-      
-      </ul>
-
-    </div>
-  </div>
-</nav>
+  </nav>
 
 
-<article class="article" itemscope itemtype="http://schema.org/Article">
-
-  
+  <article class="article" itemscope itemtype="http://schema.org/Article">
 
 
-  <div class="article-container">
-    <h1 itemprop="name"></h1>
-
-    
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
-      Jan 1, 0001
-    </time>
-  </span>
-  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Akhilesh Reddy">
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    13 min read
-  </span>
-  
-
-  
-  
-
-  
-
-  
-  
-<div class="share-box" aria-hidden="true">
-  <ul class="share">
-    <li>
-      <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2feda_henry-edited-akhil%2f"
-         target="_blank" rel="noopener">
-        <i class="fa fa-twitter"></i>
-      </a>
-    </li>
-    <li>
-      <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2feda_henry-edited-akhil%2f"
-         target="_blank" rel="noopener">
-        <i class="fa fa-facebook"></i>
-      </a>
-    </li>
-    <li>
-      <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2feda_henry-edited-akhil%2f&amp;title="
-         target="_blank" rel="noopener">
-        <i class="fa fa-linkedin"></i>
-      </a>
-    </li>
-    <li>
-      <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2feda_henry-edited-akhil%2f&amp;title="
-         target="_blank" rel="noopener">
-        <i class="fa fa-weibo"></i>
-      </a>
-    </li>
-    <li>
-      <a class="email"
-         href="mailto:?subject=&amp;body=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2feda_henry-edited-akhil%2f">
-        <i class="fa fa-envelope"></i>
-      </a>
-    </li>
-  </ul>
-</div>
 
 
-  
+    <div class="article-container">
+      <h1 itemprop="name"></h1>
 
-</div>
 
 
-    <div class="article-style" itemprop="articleBody">
-      
+      <div class="article-metadata">
 
-<pre><code class="language-python">from datetime import *
+        <span class="article-date">
+
+          <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+            Jan 1, 0001
+          </time>
+        </span>
+        <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+          <meta itemprop="name" content="Akhilesh Reddy">
+        </span>
+
+
+        <span class="middot-divider"></span>
+        <span class="article-reading-time">
+          13 min read
+        </span>
+
+
+
+
+
+
+
+
+
+        <div class="share-box" aria-hidden="true">
+          <ul class="share">
+            <li>
+              <a class="twitter"
+                href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fpunyaswaroop12.github.io%2fpost%2feda_henry-edited-akhil%2f"
+                target="_blank" rel="noopener">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a class="facebook"
+                href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fpunyaswaroop12.github.io%2fpost%2feda_henry-edited-akhil%2f"
+                target="_blank" rel="noopener">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a class="linkedin"
+                href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fpunyaswaroop12.github.io%2fpost%2feda_henry-edited-akhil%2f&amp;title="
+                target="_blank" rel="noopener">
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a class="weibo"
+                href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fpunyaswaroop12.github.io%2fpost%2feda_henry-edited-akhil%2f&amp;title="
+                target="_blank" rel="noopener">
+                <i class="fa fa-weibo"></i>
+              </a>
+            </li>
+            <li>
+              <a class="email"
+                href="mailto:?subject=&amp;body=https%3a%2f%2fpunyaswaroop12.github.io%2fpost%2feda_henry-edited-akhil%2f">
+                <i class="fa fa-envelope"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+
+
+      </div>
+
+
+      <div class="article-style" itemprop="articleBody">
+
+
+        <pre><code class="language-python">from datetime import *
 from gmplot import gmplot
 import pandas as pd
 %pylab inline
@@ -315,7 +328,7 @@ import seaborn as sns
 from matplotlib.pyplot import figure
 </code></pre>
 
-<pre><code>Populating the interactive namespace from numpy and matplotlib
+        <pre><code>Populating the interactive namespace from numpy and matplotlib
 
 
 C:\Users\Akhil\Anaconda2\lib\site-packages\IPython\core\magics\pylab.py:161: UserWarning: pylab import has clobbered these variables: ['datetime', 'time']
@@ -323,31 +336,31 @@ C:\Users\Akhil\Anaconda2\lib\site-packages\IPython\core\magics\pylab.py:161: Use
   &quot;\n`%matplotlib` prevents importing * from pylab and numpy&quot;
 </code></pre>
 
-<pre><code class="language-python">train  = pd.DataFrame({'id':[1,2,4],'features':[[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;],[&quot;C&quot;,&quot;D&quot;,&quot;F&quot;]]})
+        <pre><code class="language-python">train  = pd.DataFrame({'id':[1,2,4],'features':[[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;],[&quot;A&quot;,&quot;D&quot;,&quot;E&quot;],[&quot;C&quot;,&quot;D&quot;,&quot;F&quot;]]})
 </code></pre>
 
-<pre><code class="language-python">train['features_t'] = train[&quot;features&quot;].apply(lambda x: &quot; &quot;.join([&quot;_&quot;.join(i.split(&quot; &quot;)) for i in x]))
+        <pre><code class="language-python">train['features_t'] = train[&quot;features&quot;].apply(lambda x: &quot; &quot;.join([&quot;_&quot;.join(i.split(&quot; &quot;)) for i in x]))
 </code></pre>
 
-<pre><code class="language-python">for i in train['features'][:1]:
+        <pre><code class="language-python">for i in train['features'][:1]:
     print(i)
 </code></pre>
 
-<pre><code>['A', 'B', 'C']
+        <pre><code>['A', 'B', 'C']
 </code></pre>
 
-<pre><code class="language-python">train['features'][:1]
+        <pre><code class="language-python">train['features'][:1]
 </code></pre>
 
-<pre><code>0    [A, B, C]
+        <pre><code>0    [A, B, C]
 Name: features, dtype: object
 </code></pre>
 
-<h1 id="print-train-features-t">print train[&lsquo;features_t&rsquo;]</h1>
+        <h1 id="print-train-features-t">print train[&lsquo;features_t&rsquo;]</h1>
 
-<p>train</p>
+        <p>train</p>
 
-<pre><code class="language-python">#read dataset and take a look
+        <pre><code class="language-python">#read dataset and take a look
 stations = pd.read_csv(&quot;austin_bikeshare_stations.csv&quot;)
 trip = pd.read_csv(&quot;austin_bikeshare_trips.csv&quot;)
 trip = trip.dropna()
@@ -358,7 +371,7 @@ trips = trip[trip['year'].isin(['2014','2015','2016'])]
 # trips = trip[trip['year'] &gt;='2014.0' &amp; trip['year'] &lt;='2016.0']
 </code></pre>
 
-<pre><code class="language-python">def plot_lines(df, subplots, title, xlabel, ylabel):
+        <pre><code class="language-python">def plot_lines(df, subplots, title, xlabel, ylabel):
     '''Generates one or more line plots from pandas dataframe'''
     
     fig, ax = subplots
@@ -372,7 +385,7 @@ trips = trip[trip['year'].isin(['2014','2015','2016'])]
     ax.tick_params(axis='y', labelsize=14)
 </code></pre>
 
-<pre><code class="language-python">#transfer time into datetime
+        <pre><code class="language-python">#transfer time into datetime
 # trips[&quot;start_time&quot;] = trips[&quot;start_time&quot;].map(lambda x : datetime.datetime.strptime(x, &quot;%Y-%m-%d %H:%M:%S&quot;))
 
 trips = trips.set_index('start_time')
@@ -394,16 +407,16 @@ savefig(&quot;Weekly Rentals.PNG&quot;)
 # # trips[&quot;hours&quot;] = trips[&quot;start_time&quot;].map(lambda x : x.hour)
 </code></pre>
 
-<p><img src="output_8_0.png" alt="png" /></p>
+        <p><img src="output_8_0.png" alt="png" /></p>
 
-<pre><code class="language-python">#check earliest and  of this dataset
+        <pre><code class="language-python">#check earliest and  of this dataset
 print max(trips[&quot;start_time&quot;] ), min(trips[&quot;start_time&quot;] )
 </code></pre>
 
-<pre><code>2017-07-31 23:44:27 2013-12-21 09:12:00
+        <pre><code>2017-07-31 23:44:27 2013-12-21 09:12:00
 </code></pre>
 
-<pre><code class="language-python">def clean_memberships(df, col):
+        <pre><code class="language-python">def clean_memberships(df, col):
     '''Cleans memberships by consolidating and converting to categories
     INPUT: df - pandas Dataframe containing membership columns
            col - column name to be consolidated
@@ -431,207 +444,207 @@ print max(trips[&quot;start_time&quot;] ), min(trips[&quot;start_time&quot;] )
 trips = clean_memberships(trips, 'subscriber_type')
 </code></pre>
 
-<pre><code>C:\Users\Akhil\Anaconda2\lib\site-packages\ipykernel_launcher.py:23: SettingWithCopyWarning: 
+        <pre><code>C:\Users\Akhil\Anaconda2\lib\site-packages\ipykernel_launcher.py:23: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
 </code></pre>
 
-<pre><code class="language-python">trips[:10]
+        <pre><code class="language-python">trips[:10]
 </code></pre>
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+        <div>
+          <style scoped>
+            .dataframe tbody tr th:only-of-type {
+              vertical-align: middle;
+            }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+            .dataframe tbody tr th {
+              vertical-align: top;
+            }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bikeid</th>
-      <th>checkout_time</th>
-      <th>duration_minutes</th>
-      <th>end_station_id</th>
-      <th>end_station_name</th>
-      <th>month</th>
-      <th>start_station_id</th>
-      <th>start_station_name</th>
-      <th>subscriber_type</th>
-      <th>trip_id</th>
-      <th>year</th>
-    </tr>
-    <tr>
-      <th>start_time</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015-03-19 19:12:00</th>
-      <td>8.0</td>
-      <td>19:12:00</td>
-      <td>41</td>
-      <td>2565.0</td>
-      <td>Trinity &amp; 6th Street</td>
-      <td>3.0</td>
-      <td>2536.0</td>
-      <td>Waller &amp; 6th St.</td>
-      <td>day</td>
-      <td>9900082882</td>
-      <td>2015.0</td>
-    </tr>
-    <tr>
-      <th>2016-10-30 02:06:04</th>
-      <td>141.0</td>
-      <td>2:06:04</td>
-      <td>6</td>
-      <td>2570.0</td>
-      <td>South Congress &amp; Academy</td>
-      <td>10.0</td>
-      <td>2494.0</td>
-      <td>2nd &amp; Congress</td>
-      <td>year</td>
-      <td>12617682</td>
-      <td>2016.0</td>
-    </tr>
-    <tr>
-      <th>2016-03-11 16:28:27</th>
-      <td>578.0</td>
-      <td>16:28:27</td>
-      <td>13</td>
-      <td>2498.0</td>
-      <td>Convention Center / 4th St. @ MetroRail</td>
-      <td>3.0</td>
-      <td>2538.0</td>
-      <td>Bullock Museum @ Congress &amp; MLK</td>
-      <td>year</td>
-      <td>9075366</td>
-      <td>2016.0</td>
-    </tr>
-    <tr>
-      <th>2014-11-23 15:12:00</th>
-      <td>555.0</td>
-      <td>15:12:00</td>
-      <td>80</td>
-      <td>2712.0</td>
-      <td>Toomey Rd @ South Lamar</td>
-      <td>11.0</td>
-      <td>2497.0</td>
-      <td>Capitol Station / Congress &amp; 11th</td>
-      <td>day</td>
-      <td>9900319298</td>
-      <td>2014.0</td>
-    </tr>
-    <tr>
-      <th>2017-04-16 15:39:13</th>
-      <td>86.0</td>
-      <td>15:39:13</td>
-      <td>25</td>
-      <td>3377.0</td>
-      <td>MoPac Pedestrian Bridge @ Veterans Drive</td>
-      <td>4.0</td>
-      <td>2707.0</td>
-      <td>Rainey St @ Cummings</td>
-      <td>day</td>
-      <td>14468597</td>
-      <td>2017.0</td>
-    </tr>
-    <tr>
-      <th>2015-05-29 15:12:00</th>
-      <td>861.0</td>
-      <td>15:12:00</td>
-      <td>29</td>
-      <td>2537.0</td>
-      <td>West &amp; 6th St.</td>
-      <td>5.0</td>
-      <td>2540.0</td>
-      <td>17th &amp; Guadalupe</td>
-      <td>month</td>
-      <td>9900153369</td>
-      <td>2015.0</td>
-    </tr>
-    <tr>
-      <th>2016-07-26 12:24:16</th>
-      <td>382.0</td>
-      <td>12:24:16</td>
-      <td>17</td>
-      <td>2575.0</td>
-      <td>Riverside @ S. Lamar</td>
-      <td>7.0</td>
-      <td>2567.0</td>
-      <td>Palmer Auditorium</td>
-      <td>day</td>
-      <td>11114967</td>
-      <td>2016.0</td>
-    </tr>
-    <tr>
-      <th>2015-01-15 13:12:00</th>
-      <td>435.0</td>
-      <td>13:12:00</td>
-      <td>49</td>
-      <td>2575.0</td>
-      <td>Riverside @ S. Lamar</td>
-      <td>1.0</td>
-      <td>2575.0</td>
-      <td>Riverside @ S. Lamar</td>
-      <td>day</td>
-      <td>9900005413</td>
-      <td>2015.0</td>
-    </tr>
-    <tr>
-      <th>2014-05-05 13:12:00</th>
-      <td>555.0</td>
-      <td>13:12:00</td>
-      <td>19</td>
-      <td>2571.0</td>
-      <td>Red River &amp; 8th Street</td>
-      <td>5.0</td>
-      <td>2503.0</td>
-      <td>South Congress &amp; James</td>
-      <td>day</td>
-      <td>9900126917</td>
-      <td>2014.0</td>
-    </tr>
-    <tr>
-      <th>2017-07-08 12:27:28</th>
-      <td>668.0</td>
-      <td>12:27:28</td>
-      <td>20</td>
-      <td>3377.0</td>
-      <td>MoPac Pedestrian Bridge @ Veterans Drive</td>
-      <td>NaN</td>
-      <td>2575.0</td>
-      <td>Riverside @ S. Lamar</td>
-      <td>day</td>
-      <td>15339050</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+            .dataframe thead th {
+              text-align: right;
+            }
+          </style>
+          <table border="1" class="dataframe">
+            <thead>
+              <tr style="text-align: right;">
+                <th></th>
+                <th>bikeid</th>
+                <th>checkout_time</th>
+                <th>duration_minutes</th>
+                <th>end_station_id</th>
+                <th>end_station_name</th>
+                <th>month</th>
+                <th>start_station_id</th>
+                <th>start_station_name</th>
+                <th>subscriber_type</th>
+                <th>trip_id</th>
+                <th>year</th>
+              </tr>
+              <tr>
+                <th>start_time</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>2015-03-19 19:12:00</th>
+                <td>8.0</td>
+                <td>19:12:00</td>
+                <td>41</td>
+                <td>2565.0</td>
+                <td>Trinity &amp; 6th Street</td>
+                <td>3.0</td>
+                <td>2536.0</td>
+                <td>Waller &amp; 6th St.</td>
+                <td>day</td>
+                <td>9900082882</td>
+                <td>2015.0</td>
+              </tr>
+              <tr>
+                <th>2016-10-30 02:06:04</th>
+                <td>141.0</td>
+                <td>2:06:04</td>
+                <td>6</td>
+                <td>2570.0</td>
+                <td>South Congress &amp; Academy</td>
+                <td>10.0</td>
+                <td>2494.0</td>
+                <td>2nd &amp; Congress</td>
+                <td>year</td>
+                <td>12617682</td>
+                <td>2016.0</td>
+              </tr>
+              <tr>
+                <th>2016-03-11 16:28:27</th>
+                <td>578.0</td>
+                <td>16:28:27</td>
+                <td>13</td>
+                <td>2498.0</td>
+                <td>Convention Center / 4th St. @ MetroRail</td>
+                <td>3.0</td>
+                <td>2538.0</td>
+                <td>Bullock Museum @ Congress &amp; MLK</td>
+                <td>year</td>
+                <td>9075366</td>
+                <td>2016.0</td>
+              </tr>
+              <tr>
+                <th>2014-11-23 15:12:00</th>
+                <td>555.0</td>
+                <td>15:12:00</td>
+                <td>80</td>
+                <td>2712.0</td>
+                <td>Toomey Rd @ South Lamar</td>
+                <td>11.0</td>
+                <td>2497.0</td>
+                <td>Capitol Station / Congress &amp; 11th</td>
+                <td>day</td>
+                <td>9900319298</td>
+                <td>2014.0</td>
+              </tr>
+              <tr>
+                <th>2017-04-16 15:39:13</th>
+                <td>86.0</td>
+                <td>15:39:13</td>
+                <td>25</td>
+                <td>3377.0</td>
+                <td>MoPac Pedestrian Bridge @ Veterans Drive</td>
+                <td>4.0</td>
+                <td>2707.0</td>
+                <td>Rainey St @ Cummings</td>
+                <td>day</td>
+                <td>14468597</td>
+                <td>2017.0</td>
+              </tr>
+              <tr>
+                <th>2015-05-29 15:12:00</th>
+                <td>861.0</td>
+                <td>15:12:00</td>
+                <td>29</td>
+                <td>2537.0</td>
+                <td>West &amp; 6th St.</td>
+                <td>5.0</td>
+                <td>2540.0</td>
+                <td>17th &amp; Guadalupe</td>
+                <td>month</td>
+                <td>9900153369</td>
+                <td>2015.0</td>
+              </tr>
+              <tr>
+                <th>2016-07-26 12:24:16</th>
+                <td>382.0</td>
+                <td>12:24:16</td>
+                <td>17</td>
+                <td>2575.0</td>
+                <td>Riverside @ S. Lamar</td>
+                <td>7.0</td>
+                <td>2567.0</td>
+                <td>Palmer Auditorium</td>
+                <td>day</td>
+                <td>11114967</td>
+                <td>2016.0</td>
+              </tr>
+              <tr>
+                <th>2015-01-15 13:12:00</th>
+                <td>435.0</td>
+                <td>13:12:00</td>
+                <td>49</td>
+                <td>2575.0</td>
+                <td>Riverside @ S. Lamar</td>
+                <td>1.0</td>
+                <td>2575.0</td>
+                <td>Riverside @ S. Lamar</td>
+                <td>day</td>
+                <td>9900005413</td>
+                <td>2015.0</td>
+              </tr>
+              <tr>
+                <th>2014-05-05 13:12:00</th>
+                <td>555.0</td>
+                <td>13:12:00</td>
+                <td>19</td>
+                <td>2571.0</td>
+                <td>Red River &amp; 8th Street</td>
+                <td>5.0</td>
+                <td>2503.0</td>
+                <td>South Congress &amp; James</td>
+                <td>day</td>
+                <td>9900126917</td>
+                <td>2014.0</td>
+              </tr>
+              <tr>
+                <th>2017-07-08 12:27:28</th>
+                <td>668.0</td>
+                <td>12:27:28</td>
+                <td>20</td>
+                <td>3377.0</td>
+                <td>MoPac Pedestrian Bridge @ Veterans Drive</td>
+                <td>NaN</td>
+                <td>2575.0</td>
+                <td>Riverside @ S. Lamar</td>
+                <td>day</td>
+                <td>15339050</td>
+                <td>NaN</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-<pre><code class="language-python">
+        <pre><code class="language-python">
 # Show histogram of trip duration by membership type# Show  
 # g = sns.FacetGrid(trip_df, row='membership', sharey=False, sharex=False, margin_titles=True, size=4)
 # g.map(plt.hist, 'duration')
@@ -657,9 +670,9 @@ plot_boxplot(trips, order=membership_order, x='subscriber_type', y='log_duration
             title='Trip duration by membership type', xlabel='Membership', ylabel='Trip duration (log10 minutes)')
 </code></pre>
 
-<p><img src="output_12_0.png" alt="png" /></p>
+        <p><img src="output_12_0.png" alt="png" /></p>
 
-<pre><code class="language-python">plot_df = trips.copy()
+        <pre><code class="language-python">plot_df = trips.copy()
 plot_df['year'] = plot_df.index.year
 plot_df = plot_df['2014-01-01':'2016-12-31'].groupby(['year', 'subscriber_type']).size().reset_index(name='count')
 plot_df = plot_df.pivot_table(index='year', columns='subscriber_type', values='count')
@@ -683,396 +696,396 @@ def plot_bar(df, size, title, xlabel, ylabel):
 plot_bar(plot_df, (20,10), title='Trips by membership type and year', xlabel='Year', ylabel='Trip count')
 </code></pre>
 
-<p><img src="output_13_0.png" alt="png" /></p>
+        <p><img src="output_13_0.png" alt="png" /></p>
 
-<pre><code class="language-python">plot_df[:15]
+        <pre><code class="language-python">plot_df[:15]
 </code></pre>
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+        <div>
+          <style scoped>
+            .dataframe tbody tr th:only-of-type {
+              vertical-align: middle;
+            }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+            .dataframe tbody tr th {
+              vertical-align: top;
+            }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bikeid</th>
-      <th>checkout_time</th>
-      <th>duration_minutes</th>
-      <th>end_station_id</th>
-      <th>end_station_name</th>
-      <th>month</th>
-      <th>start_station_id</th>
-      <th>start_station_name</th>
-      <th>subscriber_type</th>
-      <th>trip_id</th>
-      <th>year</th>
-      <th>log_duration</th>
-    </tr>
-    <tr>
-      <th>start_time</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2015-03-19 19:12:00</th>
-      <td>8.0</td>
-      <td>19:12:00</td>
-      <td>41</td>
-      <td>2565.0</td>
-      <td>Trinity &amp; 6th Street</td>
-      <td>3.0</td>
-      <td>2536.0</td>
-      <td>Waller &amp; 6th St.</td>
-      <td>day</td>
-      <td>9900082882</td>
-      <td>2015</td>
-      <td>1.612784</td>
-    </tr>
-    <tr>
-      <th>2016-10-30 02:06:04</th>
-      <td>141.0</td>
-      <td>2:06:04</td>
-      <td>6</td>
-      <td>2570.0</td>
-      <td>South Congress &amp; Academy</td>
-      <td>10.0</td>
-      <td>2494.0</td>
-      <td>2nd &amp; Congress</td>
-      <td>year</td>
-      <td>12617682</td>
-      <td>2016</td>
-      <td>0.778151</td>
-    </tr>
-    <tr>
-      <th>2016-03-11 16:28:27</th>
-      <td>578.0</td>
-      <td>16:28:27</td>
-      <td>13</td>
-      <td>2498.0</td>
-      <td>Convention Center / 4th St. @ MetroRail</td>
-      <td>3.0</td>
-      <td>2538.0</td>
-      <td>Bullock Museum @ Congress &amp; MLK</td>
-      <td>year</td>
-      <td>9075366</td>
-      <td>2016</td>
-      <td>1.113943</td>
-    </tr>
-    <tr>
-      <th>2014-11-23 15:12:00</th>
-      <td>555.0</td>
-      <td>15:12:00</td>
-      <td>80</td>
-      <td>2712.0</td>
-      <td>Toomey Rd @ South Lamar</td>
-      <td>11.0</td>
-      <td>2497.0</td>
-      <td>Capitol Station / Congress &amp; 11th</td>
-      <td>day</td>
-      <td>9900319298</td>
-      <td>2014</td>
-      <td>1.903090</td>
-    </tr>
-    <tr>
-      <th>2017-04-16 15:39:13</th>
-      <td>86.0</td>
-      <td>15:39:13</td>
-      <td>25</td>
-      <td>3377.0</td>
-      <td>MoPac Pedestrian Bridge @ Veterans Drive</td>
-      <td>4.0</td>
-      <td>2707.0</td>
-      <td>Rainey St @ Cummings</td>
-      <td>day</td>
-      <td>14468597</td>
-      <td>2017</td>
-      <td>1.397940</td>
-    </tr>
-    <tr>
-      <th>2015-05-29 15:12:00</th>
-      <td>861.0</td>
-      <td>15:12:00</td>
-      <td>29</td>
-      <td>2537.0</td>
-      <td>West &amp; 6th St.</td>
-      <td>5.0</td>
-      <td>2540.0</td>
-      <td>17th &amp; Guadalupe</td>
-      <td>month</td>
-      <td>9900153369</td>
-      <td>2015</td>
-      <td>1.462398</td>
-    </tr>
-    <tr>
-      <th>2016-07-26 12:24:16</th>
-      <td>382.0</td>
-      <td>12:24:16</td>
-      <td>17</td>
-      <td>2575.0</td>
-      <td>Riverside @ S. Lamar</td>
-      <td>7.0</td>
-      <td>2567.0</td>
-      <td>Palmer Auditorium</td>
-      <td>day</td>
-      <td>11114967</td>
-      <td>2016</td>
-      <td>1.230449</td>
-    </tr>
-    <tr>
-      <th>2015-01-15 13:12:00</th>
-      <td>435.0</td>
-      <td>13:12:00</td>
-      <td>49</td>
-      <td>2575.0</td>
-      <td>Riverside @ S. Lamar</td>
-      <td>1.0</td>
-      <td>2575.0</td>
-      <td>Riverside @ S. Lamar</td>
-      <td>day</td>
-      <td>9900005413</td>
-      <td>2015</td>
-      <td>1.690196</td>
-    </tr>
-    <tr>
-      <th>2014-05-05 13:12:00</th>
-      <td>555.0</td>
-      <td>13:12:00</td>
-      <td>19</td>
-      <td>2571.0</td>
-      <td>Red River &amp; 8th Street</td>
-      <td>5.0</td>
-      <td>2503.0</td>
-      <td>South Congress &amp; James</td>
-      <td>day</td>
-      <td>9900126917</td>
-      <td>2014</td>
-      <td>1.278754</td>
-    </tr>
-    <tr>
-      <th>2017-07-08 12:27:28</th>
-      <td>668.0</td>
-      <td>12:27:28</td>
-      <td>20</td>
-      <td>3377.0</td>
-      <td>MoPac Pedestrian Bridge @ Veterans Drive</td>
-      <td>NaN</td>
-      <td>2575.0</td>
-      <td>Riverside @ S. Lamar</td>
-      <td>day</td>
-      <td>15339050</td>
-      <td>2017</td>
-      <td>1.301030</td>
-    </tr>
-    <tr>
-      <th>2014-03-14 20:12:00</th>
-      <td>981.0</td>
-      <td>20:12:00</td>
-      <td>44</td>
-      <td>2565.0</td>
-      <td>Trinity &amp; 6th Street</td>
-      <td>3.0</td>
-      <td>2563.0</td>
-      <td>Davis at Rainey Street</td>
-      <td>day</td>
-      <td>9900051787</td>
-      <td>2014</td>
-      <td>1.643453</td>
-    </tr>
-    <tr>
-      <th>2016-09-03 22:57:45</th>
-      <td>95.0</td>
-      <td>22:57:45</td>
-      <td>12</td>
-      <td>2537.0</td>
-      <td>West &amp; 6th St.</td>
-      <td>9.0</td>
-      <td>2565.0</td>
-      <td>Trinity &amp; 6th Street</td>
-      <td>day</td>
-      <td>11744697</td>
-      <td>2016</td>
-      <td>1.079181</td>
-    </tr>
-    <tr>
-      <th>2016-10-08 13:20:32</th>
-      <td>518.0</td>
-      <td>13:20:32</td>
-      <td>21</td>
-      <td>1006.0</td>
-      <td>Zilker Park West</td>
-      <td>10.0</td>
-      <td>2565.0</td>
-      <td>Trinity &amp; 6th Street</td>
-      <td>day</td>
-      <td>12298359</td>
-      <td>2016</td>
-      <td>1.322219</td>
-    </tr>
-    <tr>
-      <th>2017-03-15 22:24:42</th>
-      <td>188.0</td>
-      <td>22:24:42</td>
-      <td>14</td>
-      <td>2544.0</td>
-      <td>East 6th &amp; Pedernales St.</td>
-      <td>3.0</td>
-      <td>2571.0</td>
-      <td>Red River &amp; 8th Street</td>
-      <td>month</td>
-      <td>14054290</td>
-      <td>2017</td>
-      <td>1.146128</td>
-    </tr>
-    <tr>
-      <th>2017-04-07 16:15:51</th>
-      <td>386.0</td>
-      <td>16:15:51</td>
-      <td>13</td>
-      <td>2566.0</td>
-      <td>Pfluger Bridge @ W 2nd Street</td>
-      <td>4.0</td>
-      <td>2572.0</td>
-      <td>Barton Springs Pool</td>
-      <td>year</td>
-      <td>14348890</td>
-      <td>2017</td>
-      <td>1.113943</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+            .dataframe thead th {
+              text-align: right;
+            }
+          </style>
+          <table border="1" class="dataframe">
+            <thead>
+              <tr style="text-align: right;">
+                <th></th>
+                <th>bikeid</th>
+                <th>checkout_time</th>
+                <th>duration_minutes</th>
+                <th>end_station_id</th>
+                <th>end_station_name</th>
+                <th>month</th>
+                <th>start_station_id</th>
+                <th>start_station_name</th>
+                <th>subscriber_type</th>
+                <th>trip_id</th>
+                <th>year</th>
+                <th>log_duration</th>
+              </tr>
+              <tr>
+                <th>start_time</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>2015-03-19 19:12:00</th>
+                <td>8.0</td>
+                <td>19:12:00</td>
+                <td>41</td>
+                <td>2565.0</td>
+                <td>Trinity &amp; 6th Street</td>
+                <td>3.0</td>
+                <td>2536.0</td>
+                <td>Waller &amp; 6th St.</td>
+                <td>day</td>
+                <td>9900082882</td>
+                <td>2015</td>
+                <td>1.612784</td>
+              </tr>
+              <tr>
+                <th>2016-10-30 02:06:04</th>
+                <td>141.0</td>
+                <td>2:06:04</td>
+                <td>6</td>
+                <td>2570.0</td>
+                <td>South Congress &amp; Academy</td>
+                <td>10.0</td>
+                <td>2494.0</td>
+                <td>2nd &amp; Congress</td>
+                <td>year</td>
+                <td>12617682</td>
+                <td>2016</td>
+                <td>0.778151</td>
+              </tr>
+              <tr>
+                <th>2016-03-11 16:28:27</th>
+                <td>578.0</td>
+                <td>16:28:27</td>
+                <td>13</td>
+                <td>2498.0</td>
+                <td>Convention Center / 4th St. @ MetroRail</td>
+                <td>3.0</td>
+                <td>2538.0</td>
+                <td>Bullock Museum @ Congress &amp; MLK</td>
+                <td>year</td>
+                <td>9075366</td>
+                <td>2016</td>
+                <td>1.113943</td>
+              </tr>
+              <tr>
+                <th>2014-11-23 15:12:00</th>
+                <td>555.0</td>
+                <td>15:12:00</td>
+                <td>80</td>
+                <td>2712.0</td>
+                <td>Toomey Rd @ South Lamar</td>
+                <td>11.0</td>
+                <td>2497.0</td>
+                <td>Capitol Station / Congress &amp; 11th</td>
+                <td>day</td>
+                <td>9900319298</td>
+                <td>2014</td>
+                <td>1.903090</td>
+              </tr>
+              <tr>
+                <th>2017-04-16 15:39:13</th>
+                <td>86.0</td>
+                <td>15:39:13</td>
+                <td>25</td>
+                <td>3377.0</td>
+                <td>MoPac Pedestrian Bridge @ Veterans Drive</td>
+                <td>4.0</td>
+                <td>2707.0</td>
+                <td>Rainey St @ Cummings</td>
+                <td>day</td>
+                <td>14468597</td>
+                <td>2017</td>
+                <td>1.397940</td>
+              </tr>
+              <tr>
+                <th>2015-05-29 15:12:00</th>
+                <td>861.0</td>
+                <td>15:12:00</td>
+                <td>29</td>
+                <td>2537.0</td>
+                <td>West &amp; 6th St.</td>
+                <td>5.0</td>
+                <td>2540.0</td>
+                <td>17th &amp; Guadalupe</td>
+                <td>month</td>
+                <td>9900153369</td>
+                <td>2015</td>
+                <td>1.462398</td>
+              </tr>
+              <tr>
+                <th>2016-07-26 12:24:16</th>
+                <td>382.0</td>
+                <td>12:24:16</td>
+                <td>17</td>
+                <td>2575.0</td>
+                <td>Riverside @ S. Lamar</td>
+                <td>7.0</td>
+                <td>2567.0</td>
+                <td>Palmer Auditorium</td>
+                <td>day</td>
+                <td>11114967</td>
+                <td>2016</td>
+                <td>1.230449</td>
+              </tr>
+              <tr>
+                <th>2015-01-15 13:12:00</th>
+                <td>435.0</td>
+                <td>13:12:00</td>
+                <td>49</td>
+                <td>2575.0</td>
+                <td>Riverside @ S. Lamar</td>
+                <td>1.0</td>
+                <td>2575.0</td>
+                <td>Riverside @ S. Lamar</td>
+                <td>day</td>
+                <td>9900005413</td>
+                <td>2015</td>
+                <td>1.690196</td>
+              </tr>
+              <tr>
+                <th>2014-05-05 13:12:00</th>
+                <td>555.0</td>
+                <td>13:12:00</td>
+                <td>19</td>
+                <td>2571.0</td>
+                <td>Red River &amp; 8th Street</td>
+                <td>5.0</td>
+                <td>2503.0</td>
+                <td>South Congress &amp; James</td>
+                <td>day</td>
+                <td>9900126917</td>
+                <td>2014</td>
+                <td>1.278754</td>
+              </tr>
+              <tr>
+                <th>2017-07-08 12:27:28</th>
+                <td>668.0</td>
+                <td>12:27:28</td>
+                <td>20</td>
+                <td>3377.0</td>
+                <td>MoPac Pedestrian Bridge @ Veterans Drive</td>
+                <td>NaN</td>
+                <td>2575.0</td>
+                <td>Riverside @ S. Lamar</td>
+                <td>day</td>
+                <td>15339050</td>
+                <td>2017</td>
+                <td>1.301030</td>
+              </tr>
+              <tr>
+                <th>2014-03-14 20:12:00</th>
+                <td>981.0</td>
+                <td>20:12:00</td>
+                <td>44</td>
+                <td>2565.0</td>
+                <td>Trinity &amp; 6th Street</td>
+                <td>3.0</td>
+                <td>2563.0</td>
+                <td>Davis at Rainey Street</td>
+                <td>day</td>
+                <td>9900051787</td>
+                <td>2014</td>
+                <td>1.643453</td>
+              </tr>
+              <tr>
+                <th>2016-09-03 22:57:45</th>
+                <td>95.0</td>
+                <td>22:57:45</td>
+                <td>12</td>
+                <td>2537.0</td>
+                <td>West &amp; 6th St.</td>
+                <td>9.0</td>
+                <td>2565.0</td>
+                <td>Trinity &amp; 6th Street</td>
+                <td>day</td>
+                <td>11744697</td>
+                <td>2016</td>
+                <td>1.079181</td>
+              </tr>
+              <tr>
+                <th>2016-10-08 13:20:32</th>
+                <td>518.0</td>
+                <td>13:20:32</td>
+                <td>21</td>
+                <td>1006.0</td>
+                <td>Zilker Park West</td>
+                <td>10.0</td>
+                <td>2565.0</td>
+                <td>Trinity &amp; 6th Street</td>
+                <td>day</td>
+                <td>12298359</td>
+                <td>2016</td>
+                <td>1.322219</td>
+              </tr>
+              <tr>
+                <th>2017-03-15 22:24:42</th>
+                <td>188.0</td>
+                <td>22:24:42</td>
+                <td>14</td>
+                <td>2544.0</td>
+                <td>East 6th &amp; Pedernales St.</td>
+                <td>3.0</td>
+                <td>2571.0</td>
+                <td>Red River &amp; 8th Street</td>
+                <td>month</td>
+                <td>14054290</td>
+                <td>2017</td>
+                <td>1.146128</td>
+              </tr>
+              <tr>
+                <th>2017-04-07 16:15:51</th>
+                <td>386.0</td>
+                <td>16:15:51</td>
+                <td>13</td>
+                <td>2566.0</td>
+                <td>Pfluger Bridge @ W 2nd Street</td>
+                <td>4.0</td>
+                <td>2572.0</td>
+                <td>Barton Springs Pool</td>
+                <td>year</td>
+                <td>14348890</td>
+                <td>2017</td>
+                <td>1.113943</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-<pre><code class="language-python">(trips[&quot;end_station_name&quot;].value_counts()[:20]/sum(trips[&quot;end_station_name&quot;].value_counts())).plot(kind = &quot;bar&quot;)
+        <pre><code class="language-python">(trips[&quot;end_station_name&quot;].value_counts()[:20]/sum(trips[&quot;end_station_name&quot;].value_counts())).plot(kind = &quot;bar&quot;)
 </code></pre>
 
-<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16a4a4a8&gt;
+        <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x16a4a4a8&gt;
 </code></pre>
 
-<p><img src="output_15_1.png" alt="png" /></p>
+        <p><img src="output_15_1.png" alt="png" /></p>
 
-<pre><code class="language-python">#summary statistics
+        <pre><code class="language-python">#summary statistics
 trips[[&quot;duration_minutes&quot;, &quot;hours&quot;, &quot;month&quot;,&quot;year&quot;]].describe()
 </code></pre>
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+        <div>
+          <style scoped>
+            .dataframe tbody tr th:only-of-type {
+              vertical-align: middle;
+            }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+            .dataframe tbody tr th {
+              vertical-align: top;
+            }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>duration_minutes</th>
-      <th>hours</th>
-      <th>month</th>
-      <th>year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>649231.000000</td>
-      <td>649231.000000</td>
-      <td>618479.000000</td>
-      <td>618479.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>29.127506</td>
-      <td>14.314417</td>
-      <td>5.887185</td>
-      <td>2015.340026</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>87.278642</td>
-      <td>4.481804</td>
-      <td>3.206358</td>
-      <td>1.019771</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-      <td>2013.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>8.000000</td>
-      <td>12.000000</td>
-      <td>3.000000</td>
-      <td>2014.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>15.000000</td>
-      <td>15.000000</td>
-      <td>5.000000</td>
-      <td>2015.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>28.000000</td>
-      <td>17.000000</td>
-      <td>9.000000</td>
-      <td>2016.000000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>21296.000000</td>
-      <td>23.000000</td>
-      <td>12.000000</td>
-      <td>2017.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+            .dataframe thead th {
+              text-align: right;
+            }
+          </style>
+          <table border="1" class="dataframe">
+            <thead>
+              <tr style="text-align: right;">
+                <th></th>
+                <th>duration_minutes</th>
+                <th>hours</th>
+                <th>month</th>
+                <th>year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>count</th>
+                <td>649231.000000</td>
+                <td>649231.000000</td>
+                <td>618479.000000</td>
+                <td>618479.000000</td>
+              </tr>
+              <tr>
+                <th>mean</th>
+                <td>29.127506</td>
+                <td>14.314417</td>
+                <td>5.887185</td>
+                <td>2015.340026</td>
+              </tr>
+              <tr>
+                <th>std</th>
+                <td>87.278642</td>
+                <td>4.481804</td>
+                <td>3.206358</td>
+                <td>1.019771</td>
+              </tr>
+              <tr>
+                <th>min</th>
+                <td>0.000000</td>
+                <td>0.000000</td>
+                <td>1.000000</td>
+                <td>2013.000000</td>
+              </tr>
+              <tr>
+                <th>25%</th>
+                <td>8.000000</td>
+                <td>12.000000</td>
+                <td>3.000000</td>
+                <td>2014.000000</td>
+              </tr>
+              <tr>
+                <th>50%</th>
+                <td>15.000000</td>
+                <td>15.000000</td>
+                <td>5.000000</td>
+                <td>2015.000000</td>
+              </tr>
+              <tr>
+                <th>75%</th>
+                <td>28.000000</td>
+                <td>17.000000</td>
+                <td>9.000000</td>
+                <td>2016.000000</td>
+              </tr>
+              <tr>
+                <th>max</th>
+                <td>21296.000000</td>
+                <td>23.000000</td>
+                <td>12.000000</td>
+                <td>2017.000000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-<pre><code class="language-python">#check the number of rides in each membership type
+        <pre><code class="language-python">#check the number of rides in each membership type
 membership_summary = trips.groupby([&quot;subscriber_type&quot;])[&quot;subscriber_type&quot;].count().sort_values(ascending=False)
 membership_summary
 print(sum(membership_summary[:14])/float(sum(membership_summary)))
 
 </code></pre>
 
-<pre><code>0.9870834453623094
+        <pre><code>0.9870834453623094
 </code></pre>
 
-<pre><code class="language-python">#check number of rides on each type of membership by year
+        <pre><code class="language-python">#check number of rides on each type of membership by year
 frequent_m = membership_summary[:14] 
 frequent_m_mask = trips[&quot;subscriber_type&quot;].map(lambda x : x in frequent_m)
 freq_m_year = trips[frequent_m_mask].groupby([&quot;subscriber_type&quot;, &quot;year&quot;])[&quot;subscriber_type&quot;].count()
@@ -1080,7 +1093,7 @@ freq_m_year
 #some type of memberships have become inactive
 </code></pre>
 
-<pre><code>subscriber_type                       year  
+        <pre><code>subscriber_type                       year  
 24-Hour Kiosk (Austin B-cycle)        2013.0      1296
                                       2014.0    107376
 7-Day                                 2014.0       127
@@ -1121,7 +1134,7 @@ Weekender                             2015.0      4446
 Name: subscriber_type, dtype: int64
 </code></pre>
 
-<pre><code class="language-python"># Selected 5 most important and active group of members and check the number of rides by months
+        <pre><code class="language-python"># Selected 5 most important and active group of members and check the number of rides by months
 active_groups_s = [&quot;Walk Up&quot;, &quot;Weekender&quot;, &quot;Local365&quot;, &quot;Local30&quot;, &quot;Explorer&quot;]
 end = datetime.datetime.strptime(&quot;2017&quot;, &quot;%Y&quot;)
 start = datetime.datetime.strptime(&quot;2014&quot;, &quot;%Y&quot;)
@@ -1134,7 +1147,7 @@ frequent_m_month
 #most bike trips are taken between March to October
 </code></pre>
 
-<pre><code>subscriber_type  month
+        <pre><code>subscriber_type  month
 Explorer         1.0        435
                  2.0        182
                  3.0        882
@@ -1196,7 +1209,7 @@ Weekender        1.0        712
 Name: subscriber_type, dtype: int64
 </code></pre>
 
-<pre><code class="language-python"># plot trend by month and by week !
+        <pre><code class="language-python"># plot trend by month and by week !
 plot (frequent_m_month.loc[&quot;Explorer&quot;], marker='None', linestyle='-', label='Explorer')
 plot (frequent_m_month.loc[&quot;Local30&quot;], marker='None', linestyle='-', label='Local30')
 plot (frequent_m_month.loc[&quot;Local365&quot;], marker='None', linestyle='-', label='Local365')
@@ -1208,19 +1221,19 @@ legend(loc='best')
 show()
 </code></pre>
 
-<p><img src="output_20_0.png" alt="png" /></p>
+        <p><img src="output_20_0.png" alt="png" /></p>
 
-<pre><code class="language-python">#ax2 = ax1.twiny()
+        <pre><code class="language-python">#ax2 = ax1.twiny()
 #ax2.set_xlabel(&quot;x-transformed&quot;)
 #ax2.set_xlim(0, 60)
 #ax2.set_xticks([10, 30, 40])
 #ax2.set_xticklabels(['7','8','99'])
 </code></pre>
 
-<pre><code class="language-python"># observe by the trend in different years
+        <pre><code class="language-python"># observe by the trend in different years
 </code></pre>
 
-<pre><code class="language-python">def plot_monthly_trips(start,memberships, ax):
+        <pre><code class="language-python">def plot_monthly_trips(start,memberships, ax):
     active_groups_s = memberships
     trips_t_control = trips[trips[&quot;year&quot;] == start]
     active_groups_mask = trips_t_control[&quot;subscriber_type&quot;].map(lambda x : x in active_groups_s)
@@ -1234,7 +1247,7 @@ show()
     #legend(loc='best')
 </code></pre>
 
-<pre><code class="language-python">fig, (ax1, ax2, ax3) = subplots(nrows=1,
+        <pre><code class="language-python">fig, (ax1, ax2, ax3) = subplots(nrows=1,
                                 ncols=3,
                                 sharex=True,
                                 sharey=True,
@@ -1248,14 +1261,15 @@ fig.suptitle('Aggregated trips by months per year')
 legend(loc='best')
 </code></pre>
 
-<pre><code>&lt;matplotlib.legend.Legend at 0xb78ac18&gt;
+        <pre><code>&lt;matplotlib.legend.Legend at 0xb78ac18&gt;
 </code></pre>
 
-<p><img src="output_24_1.png" alt="png" /></p>
+        <p><img src="output_24_1.png" alt="png" /></p>
 
-<p>We can see a peak in March and October which might be caused by some event! We should take a look at the pricing of walk up membership !!!</p>
+        <p>We can see a peak in March and October which might be caused by some event! We should take a look at the
+          pricing of walk up membership !!!</p>
 
-<pre><code class="language-python">frequent_m_hour = trips_t_control[active_groups_mask].groupby([&quot;subscriber_type&quot;, &quot;hours&quot;])[&quot;subscriber_type&quot;].count()
+        <pre><code class="language-python">frequent_m_hour = trips_t_control[active_groups_mask].groupby([&quot;subscriber_type&quot;, &quot;hours&quot;])[&quot;subscriber_type&quot;].count()
 
 #frequent_m_hour[&quot;Local365&quot;]
 #frequent_m_hour[&quot;Local30&quot;]
@@ -1276,11 +1290,11 @@ legend(loc='best')
 show()
 </code></pre>
 
-<p><img src="output_26_0.png" alt="png" /></p>
+        <p><img src="output_26_0.png" alt="png" /></p>
 
-<p>We can see peaks in rush hours among local members. While walk up has a interesting high number of trips.</p>
+        <p>We can see peaks in rush hours among local members. While walk up has a interesting high number of trips.</p>
 
-<pre><code class="language-python">def hours_to_category(hours):
+        <pre><code class="language-python">def hours_to_category(hours):
     if hours &gt;= 7 and hours &lt;= 9:
         return &quot;rush_m&quot;
     elif hours &gt;= 10 and hours &lt;= 4:
@@ -1291,11 +1305,11 @@ show()
         return &quot;others&quot;
 </code></pre>
 
-<pre><code class="language-python">trips_t_control[&quot;time_cat&quot;] = trips_t_control[&quot;hours&quot;].map(hours_to_category)
+        <pre><code class="language-python">trips_t_control[&quot;time_cat&quot;] = trips_t_control[&quot;hours&quot;].map(hours_to_category)
 
 </code></pre>
 
-<pre><code>C:\Users\Akhil\Anaconda2\lib\site-packages\ipykernel_launcher.py:1: SettingWithCopyWarning: 
+        <pre><code>C:\Users\Akhil\Anaconda2\lib\site-packages\ipykernel_launcher.py:1: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1303,263 +1317,263 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
   &quot;&quot;&quot;Entry point for launching an IPython kernel.
 </code></pre>
 
-<pre><code class="language-python">stations_close_McCombs = stations[(stations[&quot;latitude&quot;] &lt; 30.30) &amp; (stations[&quot;latitude&quot;] &gt; 30.27) \
+        <pre><code class="language-python">stations_close_McCombs = stations[(stations[&quot;latitude&quot;] &lt; 30.30) &amp; (stations[&quot;latitude&quot;] &gt; 30.27) \
                                   &amp; (stations[&quot;longitude&quot;] &lt; -97.6) &amp; (stations[&quot;longitude&quot;] &gt; -97.8)\
                                  &amp; (stations[&quot;status&quot;] == &quot;active&quot;)]
 stations_close_McCombs
 #stations_close_McCombs.loc[:,[&quot;station_id&quot;, &quot;latitude&quot;, &quot;longitude&quot;]]
 </code></pre>
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+        <div>
+          <style scoped>
+            .dataframe tbody tr th:only-of-type {
+              vertical-align: middle;
+            }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+            .dataframe tbody tr th {
+              vertical-align: top;
+            }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>latitude</th>
-      <th>location</th>
-      <th>longitude</th>
-      <th>name</th>
-      <th>station_id</th>
-      <th>status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>30.27041</td>
-      <td>(30.27041 -97.75046)</td>
-      <td>-97.75046</td>
-      <td>West &amp; 6th St.</td>
-      <td>2537</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>30.28576</td>
-      <td>(30.28576 -97.74181)</td>
-      <td>-97.74181</td>
-      <td>UT West Mall @ Guadalupe</td>
-      <td>2548</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>30.27336</td>
-      <td>(30.27336 -97.73805)</td>
-      <td>-97.73805</td>
-      <td>State Capitol Visitors Garage @ San Jacinto &amp; ...</td>
-      <td>2561</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>30.27466</td>
-      <td>(30.27466 -97.77028)</td>
-      <td>-97.77028</td>
-      <td>MoPac Pedestrian Bridge @ Veterans Drive</td>
-      <td>3377</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>30.27217</td>
-      <td>(30.27217 -97.75246)</td>
-      <td>-97.75246</td>
-      <td>Henderson &amp; 9th</td>
-      <td>3685</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>30.27193</td>
-      <td>(30.27193 -97.73854)</td>
-      <td>-97.73854</td>
-      <td>11th &amp; San Jacinto</td>
-      <td>3291</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>30.27186</td>
-      <td>(30.27186 -97.73997)</td>
-      <td>-97.73997</td>
-      <td>OFFICE/Main/Shop/Repair</td>
-      <td>1001</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>53</th>
-      <td>30.27260</td>
-      <td>(30.2726 -97.74127)</td>
-      <td>-97.74127</td>
-      <td>Capitol Station / Congress &amp; 11th</td>
-      <td>2497</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>56</th>
-      <td>30.28118</td>
-      <td>(30.28118 -97.75219)</td>
-      <td>-97.75219</td>
-      <td>Pease Park</td>
-      <td>3464</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>30.28039</td>
-      <td>(30.28039 -97.73809)</td>
-      <td>-97.73809</td>
-      <td>Bullock Museum @ Congress &amp; MLK</td>
-      <td>2538</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>58</th>
-      <td>30.27974</td>
-      <td>(30.27974 -97.74254)</td>
-      <td>-97.74254</td>
-      <td>17th &amp; Guadalupe</td>
-      <td>2540</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>30.27616</td>
-      <td>(30.27616 -97.74488)</td>
-      <td>-97.74488</td>
-      <td>13th &amp; San Antonio</td>
-      <td>3635</td>
-      <td>active</td>
-    </tr>
-    <tr>
-      <th>71</th>
-      <td>30.27654</td>
-      <td>(30.27654 -97.74155)</td>
-      <td>-97.74155</td>
-      <td>State Capitol @ 14th &amp; Colorado</td>
-      <td>2541</td>
-      <td>active</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+            .dataframe thead th {
+              text-align: right;
+            }
+          </style>
+          <table border="1" class="dataframe">
+            <thead>
+              <tr style="text-align: right;">
+                <th></th>
+                <th>latitude</th>
+                <th>location</th>
+                <th>longitude</th>
+                <th>name</th>
+                <th>station_id</th>
+                <th>status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>0</th>
+                <td>30.27041</td>
+                <td>(30.27041 -97.75046)</td>
+                <td>-97.75046</td>
+                <td>West &amp; 6th St.</td>
+                <td>2537</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>9</th>
+                <td>30.28576</td>
+                <td>(30.28576 -97.74181)</td>
+                <td>-97.74181</td>
+                <td>UT West Mall @ Guadalupe</td>
+                <td>2548</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>10</th>
+                <td>30.27336</td>
+                <td>(30.27336 -97.73805)</td>
+                <td>-97.73805</td>
+                <td>State Capitol Visitors Garage @ San Jacinto &amp; ...</td>
+                <td>2561</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>17</th>
+                <td>30.27466</td>
+                <td>(30.27466 -97.77028)</td>
+                <td>-97.77028</td>
+                <td>MoPac Pedestrian Bridge @ Veterans Drive</td>
+                <td>3377</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>21</th>
+                <td>30.27217</td>
+                <td>(30.27217 -97.75246)</td>
+                <td>-97.75246</td>
+                <td>Henderson &amp; 9th</td>
+                <td>3685</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>31</th>
+                <td>30.27193</td>
+                <td>(30.27193 -97.73854)</td>
+                <td>-97.73854</td>
+                <td>11th &amp; San Jacinto</td>
+                <td>3291</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>38</th>
+                <td>30.27186</td>
+                <td>(30.27186 -97.73997)</td>
+                <td>-97.73997</td>
+                <td>OFFICE/Main/Shop/Repair</td>
+                <td>1001</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>53</th>
+                <td>30.27260</td>
+                <td>(30.2726 -97.74127)</td>
+                <td>-97.74127</td>
+                <td>Capitol Station / Congress &amp; 11th</td>
+                <td>2497</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>56</th>
+                <td>30.28118</td>
+                <td>(30.28118 -97.75219)</td>
+                <td>-97.75219</td>
+                <td>Pease Park</td>
+                <td>3464</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>57</th>
+                <td>30.28039</td>
+                <td>(30.28039 -97.73809)</td>
+                <td>-97.73809</td>
+                <td>Bullock Museum @ Congress &amp; MLK</td>
+                <td>2538</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>58</th>
+                <td>30.27974</td>
+                <td>(30.27974 -97.74254)</td>
+                <td>-97.74254</td>
+                <td>17th &amp; Guadalupe</td>
+                <td>2540</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>64</th>
+                <td>30.27616</td>
+                <td>(30.27616 -97.74488)</td>
+                <td>-97.74488</td>
+                <td>13th &amp; San Antonio</td>
+                <td>3635</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <th>71</th>
+                <td>30.27654</td>
+                <td>(30.27654 -97.74155)</td>
+                <td>-97.74155</td>
+                <td>State Capitol @ 14th &amp; Colorado</td>
+                <td>2541</td>
+                <td>active</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-<pre><code class="language-python">borrow_heatmap_df = trips_t_control[[&quot;start_station_id&quot;,&quot;time_cat&quot;]].merge(stations_close_McCombs[[&quot;station_id&quot;, &quot;latitude&quot;, &quot;longitude&quot;,&quot;location&quot;]],
+        <pre><code class="language-python">borrow_heatmap_df = trips_t_control[[&quot;start_station_id&quot;,&quot;time_cat&quot;]].merge(stations_close_McCombs[[&quot;station_id&quot;, &quot;latitude&quot;, &quot;longitude&quot;,&quot;location&quot;]],
                                                                            left_on = &quot;start_station_id&quot;,
                                                                           right_on = &quot;station_id&quot;)
 borrow_heatmap_df[:5]
 </code></pre>
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+        <div>
+          <style scoped>
+            .dataframe tbody tr th:only-of-type {
+              vertical-align: middle;
+            }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+            .dataframe tbody tr th {
+              vertical-align: top;
+            }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>start_station_id</th>
-      <th>time_cat</th>
-      <th>station_id</th>
-      <th>latitude</th>
-      <th>longitude</th>
-      <th>location</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2538.0</td>
-      <td>others</td>
-      <td>2538</td>
-      <td>30.28039</td>
-      <td>-97.73809</td>
-      <td>(30.28039 -97.73809)</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2538.0</td>
-      <td>others</td>
-      <td>2538</td>
-      <td>30.28039</td>
-      <td>-97.73809</td>
-      <td>(30.28039 -97.73809)</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2538.0</td>
-      <td>others</td>
-      <td>2538</td>
-      <td>30.28039</td>
-      <td>-97.73809</td>
-      <td>(30.28039 -97.73809)</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2538.0</td>
-      <td>others</td>
-      <td>2538</td>
-      <td>30.28039</td>
-      <td>-97.73809</td>
-      <td>(30.28039 -97.73809)</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2538.0</td>
-      <td>others</td>
-      <td>2538</td>
-      <td>30.28039</td>
-      <td>-97.73809</td>
-      <td>(30.28039 -97.73809)</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+            .dataframe thead th {
+              text-align: right;
+            }
+          </style>
+          <table border="1" class="dataframe">
+            <thead>
+              <tr style="text-align: right;">
+                <th></th>
+                <th>start_station_id</th>
+                <th>time_cat</th>
+                <th>station_id</th>
+                <th>latitude</th>
+                <th>longitude</th>
+                <th>location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>0</th>
+                <td>2538.0</td>
+                <td>others</td>
+                <td>2538</td>
+                <td>30.28039</td>
+                <td>-97.73809</td>
+                <td>(30.28039 -97.73809)</td>
+              </tr>
+              <tr>
+                <th>1</th>
+                <td>2538.0</td>
+                <td>others</td>
+                <td>2538</td>
+                <td>30.28039</td>
+                <td>-97.73809</td>
+                <td>(30.28039 -97.73809)</td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td>2538.0</td>
+                <td>others</td>
+                <td>2538</td>
+                <td>30.28039</td>
+                <td>-97.73809</td>
+                <td>(30.28039 -97.73809)</td>
+              </tr>
+              <tr>
+                <th>3</th>
+                <td>2538.0</td>
+                <td>others</td>
+                <td>2538</td>
+                <td>30.28039</td>
+                <td>-97.73809</td>
+                <td>(30.28039 -97.73809)</td>
+              </tr>
+              <tr>
+                <th>4</th>
+                <td>2538.0</td>
+                <td>others</td>
+                <td>2538</td>
+                <td>30.28039</td>
+                <td>-97.73809</td>
+                <td>(30.28039 -97.73809)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-<pre><code class="language-python">rush_m_heatmap_df = borrow_heatmap_df[borrow_heatmap_df[&quot;time_cat&quot;] == &quot;rush_m&quot;]
+        <pre><code class="language-python">rush_m_heatmap_df = borrow_heatmap_df[borrow_heatmap_df[&quot;time_cat&quot;] == &quot;rush_m&quot;]
 rush_m_heatmap_weight = borrow_heatmap_df.groupby([&quot;latitude&quot;, &quot;longitude&quot;])[&quot;location&quot;].count()
 rush_m_station_lat , rush_m_station_lon = zip(*rush_m_heatmap_weight.index.values) 
 rush_m_heatmap_weight.values
 #rush_m_heatmap_weight_p = rush_m_heatmap_weight.values/ float(sum(rush_m_heatmap_weight.values))
 </code></pre>
 
-<pre><code>array([10186,  2087, 16805,  3944,  5110,  4135,  6352,  9145,   334,
+        <pre><code>array([10186,  2087, 16805,  3944,  5110,  4135,  6352,  9145,   334,
         9115], dtype=int64)
 </code></pre>
 
-<pre><code class="language-python">rush_m_heatmap_weight_p = rush_m_heatmap_weight.values/ float(sum(rush_m_heatmap_weight.values))
+        <pre><code class="language-python">rush_m_heatmap_weight_p = rush_m_heatmap_weight.values/ float(sum(rush_m_heatmap_weight.values))
 rush_m_heatmap_weight_p
 </code></pre>
 
-<pre><code>array([0.15154806, 0.03105054, 0.25002604, 0.05867912, 0.07602696,
+        <pre><code>array([0.15154806, 0.03105054, 0.25002604, 0.05867912, 0.07602696,
        0.06152084, 0.09450553, 0.13605999, 0.00496928, 0.13561365])
 </code></pre>
 
-<pre><code class="language-python">gmap = gmplot.GoogleMapPlotter(30.28398,-97.73792, 13)
+        <pre><code class="language-python">gmap = gmplot.GoogleMapPlotter(30.28398,-97.73792, 13)
 
 
 #gmap.heatmap(rush_m_heatmap_df[&quot;latitude&quot;] ,rush_m_heatmap_df[&quot;longitude&quot;], threshold=10, radius = 35)
@@ -1573,10 +1587,10 @@ for i in range(0, len(rush_m_station_lat)):
 gmap.draw(&quot;rush_morning_w.html&quot;)
 </code></pre>
 
-<pre><code class="language-python">!pip install mapsplotlib
+        <pre><code class="language-python">!pip install mapsplotlib
 </code></pre>
 
-<pre><code>Collecting mapsplotlib
+        <pre><code>Collecting mapsplotlib
   Downloading https://files.pythonhosted.org/packages/58/67/a321ad8a1519d9b3665c8e93d71cb2fd22036bf81ddeab7624999186738c/mapsplotlib-1.1.2.tar.gz
 Requirement already satisfied: numpy&gt;=1.8.2 in c:\users\akhil\anaconda2\lib\site-packages (from mapsplotlib) (1.14.3)
 Requirement already satisfied: pandas&gt;=0.13.1 in c:\users\akhil\anaconda2\lib\site-packages (from mapsplotlib) (0.23.0)
@@ -1611,20 +1625,20 @@ You are using pip version 10.0.1, however version 18.0 is available.
 You should consider upgrading via the 'python -m pip install --upgrade pip' command.
 </code></pre>
 
-<pre><code class="language-python">from mapsplotlib import mapsplot as mplt
+        <pre><code class="language-python">from mapsplotlib import mapsplot as mplt
 
 </code></pre>
 
-<pre><code class="language-python">df = rush_m_heatmap_df[['latitude','longitude']].drop_duplicates()
+        <pre><code class="language-python">df = rush_m_heatmap_df[['latitude','longitude']].drop_duplicates()
 color = ['green','red','blue','green','red','blue','green','red','blue','blue']
 size = ['mid','mid','mid','mid','mid','tiny','tiny','mid','mid','mid']
 
 </code></pre>
 
-<pre><code class="language-python">df['value'] = [1,0.2,0.3,0.4,0.2,0.3,0.4,0.5,0.6,0.4]
+        <pre><code class="language-python">df['value'] = [1,0.2,0.3,0.4,0.2,0.3,0.4,0.5,0.6,0.4]
 </code></pre>
 
-<pre><code class="language-python"># df['color'] = color
+        <pre><code class="language-python"># df['color'] = color
 # df['size'] = size
 # df['label'] = ['+50%','%20','sorry','A','A','A','A','A','A','A']
 # df['label'] = rush_m_heatmap_weight_p
@@ -1632,216 +1646,228 @@ size = ['mid','mid','mid','mid','mid','tiny','tiny','mid','mid','mid']
 df
 </code></pre>
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+        <div>
+          <style scoped>
+            .dataframe tbody tr th:only-of-type {
+              vertical-align: middle;
+            }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+            .dataframe tbody tr th {
+              vertical-align: top;
+            }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>latitude</th>
-      <th>longitude</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>47</th>
-      <td>30.28039</td>
-      <td>-97.73809</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>9153</th>
-      <td>30.27260</td>
-      <td>-97.74127</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>25962</th>
-      <td>30.27974</td>
-      <td>-97.74254</td>
-      <td>0.3</td>
-    </tr>
-    <tr>
-      <th>32313</th>
-      <td>30.28576</td>
-      <td>-97.74181</td>
-      <td>0.4</td>
-    </tr>
-    <tr>
-      <th>41431</th>
-      <td>30.27336</td>
-      <td>-97.73805</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>45375</th>
-      <td>30.27466</td>
-      <td>-97.77028</td>
-      <td>0.3</td>
-    </tr>
-    <tr>
-      <th>50523</th>
-      <td>30.27041</td>
-      <td>-97.75046</td>
-      <td>0.4</td>
-    </tr>
-    <tr>
-      <th>60659</th>
-      <td>30.27193</td>
-      <td>-97.73854</td>
-      <td>0.5</td>
-    </tr>
-    <tr>
-      <th>62746</th>
-      <td>30.27654</td>
-      <td>-97.74155</td>
-      <td>0.6</td>
-    </tr>
-    <tr>
-      <th>66880</th>
-      <td>30.28118</td>
-      <td>-97.75219</td>
-      <td>0.4</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+            .dataframe thead th {
+              text-align: right;
+            }
+          </style>
+          <table border="1" class="dataframe">
+            <thead>
+              <tr style="text-align: right;">
+                <th></th>
+                <th>latitude</th>
+                <th>longitude</th>
+                <th>value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>47</th>
+                <td>30.28039</td>
+                <td>-97.73809</td>
+                <td>1.0</td>
+              </tr>
+              <tr>
+                <th>9153</th>
+                <td>30.27260</td>
+                <td>-97.74127</td>
+                <td>0.2</td>
+              </tr>
+              <tr>
+                <th>25962</th>
+                <td>30.27974</td>
+                <td>-97.74254</td>
+                <td>0.3</td>
+              </tr>
+              <tr>
+                <th>32313</th>
+                <td>30.28576</td>
+                <td>-97.74181</td>
+                <td>0.4</td>
+              </tr>
+              <tr>
+                <th>41431</th>
+                <td>30.27336</td>
+                <td>-97.73805</td>
+                <td>0.2</td>
+              </tr>
+              <tr>
+                <th>45375</th>
+                <td>30.27466</td>
+                <td>-97.77028</td>
+                <td>0.3</td>
+              </tr>
+              <tr>
+                <th>50523</th>
+                <td>30.27041</td>
+                <td>-97.75046</td>
+                <td>0.4</td>
+              </tr>
+              <tr>
+                <th>60659</th>
+                <td>30.27193</td>
+                <td>-97.73854</td>
+                <td>0.5</td>
+              </tr>
+              <tr>
+                <th>62746</th>
+                <td>30.27654</td>
+                <td>-97.74155</td>
+                <td>0.6</td>
+              </tr>
+              <tr>
+                <th>66880</th>
+                <td>30.28118</td>
+                <td>-97.75219</td>
+                <td>0.4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-<pre><code class="language-python">mplt.plot_markers(df)
+        <pre><code class="language-python">mplt.plot_markers(df)
 
 </code></pre>
 
-<p><img src="output_40_0.png" alt="png" /></p>
+        <p><img src="output_40_0.png" alt="png" /></p>
 
-<pre><code class="language-python">datetime.datetime.strptime(trips[&quot;start_time&quot;][0], &quot;%Y-%m-%d %H:%M:%S&quot;)
+        <pre><code class="language-python">datetime.datetime.strptime(trips[&quot;start_time&quot;][0], &quot;%Y-%m-%d %H:%M:%S&quot;)
 </code></pre>
 
-<pre><code>datetime.datetime(2015, 3, 19, 19, 12)
+        <pre><code>datetime.datetime(2015, 3, 19, 19, 12)
 </code></pre>
 
-<pre><code class="language-python">datetime.datetime.strptime(&quot;2017&quot;, &quot;%Y&quot;)
+        <pre><code class="language-python">datetime.datetime.strptime(&quot;2017&quot;, &quot;%Y&quot;)
 </code></pre>
 
-<pre><code>datetime.datetime(2017, 1, 1, 0, 0)
+        <pre><code>datetime.datetime(2017, 1, 1, 0, 0)
 </code></pre>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
+  </article>
 
-    
+  <footer class="site-footer">
+    <div class="container">
+      <p class="powered-by">
 
+        &copy; 2018 &middot;
 
-    
-    
+        Powered by the
+        <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+        <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
-    
+        <span class="pull-right" aria-hidden="true">
+          <a href="#" id="back_to_top">
+            <span class="button_icon">
+              <i class="fa fa-chevron-up fa-2x"></i>
+            </span>
+          </a>
+        </span>
 
-    
-
-
-  </div>
-</article>
-
-<footer class="site-footer">
-  <div class="container">
-    <p class="powered-by">
-
-      &copy; 2018 &middot; 
-
-      Powered by the
-      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-
-      <span class="pull-right" aria-hidden="true">
-        <a href="#" id="back_to_top">
-          <span class="button_icon">
-            <i class="fa fa-chevron-up fa-2x"></i>
-          </span>
-        </a>
-      </span>
-
-    </p>
-  </div>
-</footer>
+      </p>
+    </div>
+  </footer>
 
 
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Cite</h4>
-      </div>
-      <div>
-        <pre><code class="modal-body tex"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
-          <i class="fa fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
-          <i class="fa fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
+  <div id="modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Cite</h4>
+        </div>
+        <div>
+          <pre><code class="modal-body tex"></code></pre>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+            <i class="fa fa-copy"></i> Copy
+          </a>
+          <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+            <i class="fa fa-download"></i> Download
+          </a>
+          <div id="modal-error"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-    
 
-    
-    
 
-    
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
-    
-    
-    <script src="/js/hugo-academic.js"></script>
-    
 
-    
-    
-      
-      
-      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-      
 
-      
 
-      
 
-      <script>hljs.initHighlightingOnLoad();</script>
-    
 
-    
-    
-    <script type="text/x-mathjax-config">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js"
+    integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js"
+    integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"
+    integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+
+  <script src="/js/hugo-academic.js"></script>
+
+
+
+
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+    integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  <script type="text/x-mathjax-config">
         MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
     </script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
-    
-    
 
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML"
+    integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw=="
+    crossorigin="anonymous"></script>
+
+
+
+</body>
+
 </html>
-
