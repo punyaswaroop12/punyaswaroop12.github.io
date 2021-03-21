@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.52" />
+  <meta name="author" content="Akhilesh Reddy">
+
+  
+  
+  
+  
+    
+      
+    
+  
+  <meta name="description" content="I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way
+Introduction Decision trees are a class of machine learning algorithms that decide the output class of a datapoint based on a series of binary decisions using the variables in the dataset. This split is generally called binary recrusive split and happens at each step of the tree.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://akhilesh-reddy.github.io/post/decision-trees/">
+
+  
+
+
+  
+
+  
+  
+  <meta name="theme-color" content="#4caf50">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+
+  
+  <link rel="alternate" href="https://akhilesh-reddy.github.io/index.xml" type="application/rss+xml" title="Akhilesh Reddy">
+  <link rel="feed" href="https://akhilesh-reddy.github.io/index.xml" type="application/rss+xml" title="Akhilesh Reddy">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://akhilesh-reddy.github.io/post/decision-trees/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@https://twitter.com/akhileshreddy44">
+  <meta property="twitter:creator" content="@https://twitter.com/akhileshreddy44">
+  
+  <meta property="og:site_name" content="Akhilesh Reddy">
+  <meta property="og:url" content="https://akhilesh-reddy.github.io/post/decision-trees/">
+  <meta property="og:title" content="ML Algorithms 2: Decision trees | Akhilesh Reddy">
+  <meta property="og:description" content="I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way
+Introduction Decision trees are a class of machine learning algorithms that decide the output class of a datapoint based on a series of binary decisions using the variables in the dataset. This split is generally called binary recrusive split and happens at each step of the tree.">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-01-19T00:00:00-06:00">
+  
+  <meta property="article:modified_time" content="2019-01-19T00:00:00-06:00">
+  
+
+  
+
+  <title>ML Algorithms 2: Decision trees | Akhilesh Reddy</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Akhilesh Reddy</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/docs/resume.pdf">
+            
+            <span>Resume</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">ML Algorithms 2: Decision trees</h1>
+
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2019-01-19 00:00:00 -0600 CST" itemprop="datePublished dateModified">
+      Jan 19, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Akhilesh Reddy">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=ML%20Algorithms%202%3a%20Decision%20trees&amp;url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fdecision-trees%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fdecision-trees%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fdecision-trees%2f&amp;title=ML%20Algorithms%202%3a%20Decision%20trees"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fdecision-trees%2f&amp;title=ML%20Algorithms%202%3a%20Decision%20trees"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=ML%20Algorithms%202%3a%20Decision%20trees&amp;body=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fdecision-trees%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p><strong>I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way</strong><br />
+<img src="/img/decision tree.png" alt="decision tree" /></p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Decision trees are a class of machine learning algorithms that decide the output class of a datapoint based on a series of binary decisions using the variables in the dataset.
+This split is generally called binary recrusive split and happens at each step of the tree. A single parent node will be split into 2 child nodes based on a particular variable.<br />
+At the end of it, we obtain the final child nodes which are called leaves. Now the number of leaves that can be created depends on how we long we want the tree to grow.</p>
+
+<p>For example, if there are a 100 students and each of them have their resident status listed as either resident or non-resident. Now at the first split of the decision tree, the entire 100 students will be split into 2 groups, resident or non-resident based on the data.</p>
+
+<p>How does this happen?<br />
+Well, in real life scenario we will have more than one variable that describes a particular datapoint like age, sex, occupation e.t.c.<br />
+In this case, there are multiple methods that are used to determine the best variable to be used to split the data at a particular step.</p>
+
+<ol>
+<li><p>Gini index : Gini index gives a measure of total variance across all the classes and the smaller Gini index indicates higher node purity.<br />
+<img src="/img/gini index.jpg" alt="gini" /></p></li>
+
+<li><p>Entropy : This metric is used to calculate the purity of child nodes that are created after splitting the parent node. Higher the purity of the child nodes, lesser is the entropy.<br />
+<img src="/img/entropy.png" alt="entropy" /></p></li>
+
+<li><p>Chi-square : Chi-square value is calculated for each variable for the available data at that step of the decision tree. Higher the chi-square value, higher is the important of the variable.</p></li>
+</ol>
+
+<h3 id="hyperparameter-tuning">Hyperparameter tuning:</h3>
+
+<p>If the tree grows too large, there is a chance for overfitting. It means that the tree will have high variance and will give high error rates for any new test data. To avoid, we generally perform cross validation on a particular metric like rmse to select the number of leaves that are reasonable to avoid overfitting.
+We can have various metrics to find the optimal parameters such as accuracy and misclassification error rate. We can tune multiple other parameters of a tree like maximum number of datapoints in each child node, minimum datapoints required to split a parent node into children nodes e.t.c</p>
+
+<p>Generally, there are 3 types of search techniques that we use for hyper parameter tuning.</p>
+
+<ol>
+<li><strong>Grid search :</strong> We specify a list of parameters that we think would be reasonable for the data we have and the algorithm searches for all the combinations.<br /></li>
+<li><strong>Random search :</strong> The algorithm picks the combinations randomly and decides on the final combinations that will reduce the cost<br /></li>
+<li><strong>Bayesian parameter optimization :</strong> In this method, the knowledge from the previous combination will be carried to the search of the next combination. In other words, the second combination will be conditional on the output of the first combination and continues accordingly.<br /></li>
+</ol>
+
+<p>All these algorithms run on different folds of cross validation data to decide on the best parameters for the trees.</p>
+
+<h3 id="pruning">Pruning:</h3>
+
+<p>There is one more method to avoid overfitting of the tree called Pruning. In this method, we let the tree grow to its maximum possible size and at the end we prune the tree based on k-fold cross validation technique.
+Pruning method randomly removes branches from the trees and calculates the error rate or misclassification rate of the tree. For every subsequent step,if the error rate increases on removing a particular branch, the branch will be replaced back to the tree.<br />
+If the cross validation error rate decreases, the branch will be permanently removed from the tree and the nodes would become the final nodes at that part of the tree.<br />
+This method is more technically called &ldquo;Cost-complexity pruning&rdquo;.</p>
+
+<p>That&rsquo;s all folks. See you later in the next article.</p>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/"></a>
+  
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/logistic-regression/">ML Algorithms 1:Logistic Regression</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2018 &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

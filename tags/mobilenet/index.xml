@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mobilenet on Akhilesh Reddy</title>
+    <link>https://akhilesh-reddy.github.io/tags/mobilenet/</link>
+    <description>Recent content in mobilenet on Akhilesh Reddy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 19 Jan 2019 06:31:29 -0500</lastBuildDate>
+    
+	<atom:link href="https://akhilesh-reddy.github.io/tags/mobilenet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sketch recognition using Mobilenet</title>
+      <link>https://akhilesh-reddy.github.io/project/sketch-recognition/</link>
+      <pubDate>Sat, 19 Jan 2019 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/sketch-recognition/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

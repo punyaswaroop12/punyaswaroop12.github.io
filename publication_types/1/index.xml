@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 on Akhilesh Reddy</title>
+    <link>/publication_types/1/</link>
+    <description>Recent content in 1 on Akhilesh Reddy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 22 Dec 2017 01:20:19 -0500</lastBuildDate>
+    
+	<atom:link href="/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Uncertainty quantification of tabulated supercritical thermodynamics for compressible Navier-Stokes solvers</title>
+      <link>/publication/tabulated-supercritical-thermo/</link>
+      <pubDate>Fri, 22 Dec 2017 01:20:19 -0500</pubDate>
+      
+      <guid>/publication/tabulated-supercritical-thermo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.52" />
+  <meta name="author" content="Akhilesh Reddy">
+
+  
+  
+  
+  
+    
+      
+    
+  
+  <meta name="description" content="I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way
+Bagging Introduction Bagging is an ensemble technique. In this method, instead of training just one tree, we train hundreds of trees and create an ensemble of the output at the end. For each tree, instead of taking the entire data, we take only a few datapoints as a bagging sample.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://akhilesh-reddy.github.io/post/bagging-and-random-forests/">
+
+  
+
+
+  
+
+  
+  
+  <meta name="theme-color" content="#4caf50">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+
+  
+  <link rel="alternate" href="https://akhilesh-reddy.github.io/index.xml" type="application/rss+xml" title="Akhilesh Reddy">
+  <link rel="feed" href="https://akhilesh-reddy.github.io/index.xml" type="application/rss+xml" title="Akhilesh Reddy">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://akhilesh-reddy.github.io/post/bagging-and-random-forests/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@https://twitter.com/akhileshreddy44">
+  <meta property="twitter:creator" content="@https://twitter.com/akhileshreddy44">
+  
+  <meta property="og:site_name" content="Akhilesh Reddy">
+  <meta property="og:url" content="https://akhilesh-reddy.github.io/post/bagging-and-random-forests/">
+  <meta property="og:title" content="ML Algorithms 3: Bagging and Random forests  | Akhilesh Reddy">
+  <meta property="og:description" content="I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way
+Bagging Introduction Bagging is an ensemble technique. In this method, instead of training just one tree, we train hundreds of trees and create an ensemble of the output at the end. For each tree, instead of taking the entire data, we take only a few datapoints as a bagging sample.">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-01-21T00:00:00-06:00">
+  
+  <meta property="article:modified_time" content="2019-01-21T00:00:00-06:00">
+  
+
+  
+
+  <title>ML Algorithms 3: Bagging and Random forests  | Akhilesh Reddy</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Akhilesh Reddy</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/docs/resume.pdf">
+            
+            <span>Resume</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">ML Algorithms 3: Bagging and Random forests </h1>
+
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2019-01-21 00:00:00 -0600 CST" itemprop="datePublished dateModified">
+      Jan 21, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Akhilesh Reddy">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=ML%20Algorithms%203%3a%20Bagging%20and%20Random%20forests%20&amp;url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fbagging-and-random-forests%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fbagging-and-random-forests%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fbagging-and-random-forests%2f&amp;title=ML%20Algorithms%203%3a%20Bagging%20and%20Random%20forests%20"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fbagging-and-random-forests%2f&amp;title=ML%20Algorithms%203%3a%20Bagging%20and%20Random%20forests%20"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=ML%20Algorithms%203%3a%20Bagging%20and%20Random%20forests%20&amp;body=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fbagging-and-random-forests%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p><strong>I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way</strong><br />
+<img src="/img/ensembling.png" alt="ensembling" /></p>
+
+<h2 id="bagging"><strong>Bagging</strong></h2>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Bagging is an ensemble technique. In this method, instead of training just one tree, we train hundreds of trees and create an ensemble of the output at the end.
+For each tree, instead of taking the entire data, we take only a few datapoints as a bagging sample.<br />
+Each tree is let to grow like any other normal tree. All the methods that are discussed in the &ldquo;Decision trees&rdquo; post are still applicable here.
+At the end, all the hundreds of trees give different outputs and all these outputs are generally averaged to come up with the final class or prediction for a particular data point.</p>
+
+<p><strong>It is important to note that trees are not pruned in bagging methods. This is because if each tree overfits and has high variance, bagging will capture information from all these overfitted trees and results in a better output</strong></p>
+
+<h3 id="why-bagging">Why bagging?</h3>
+
+<p>The main benefits of using this method is that it reduces the chances of overfitting and takes advantage of the weakness of different trees and create a single strong learner.
+If we have multiple trees that are uncorrelated, in other words, if they have high variance then the final ensembled output would have a higher accuracy as it is learning different values from different trees and will rightly learn different patterns present in the data.</p>
+
+<h2 id="random-forest"><strong>Random Forest</strong></h2>
+
+<p><img src="/img/rf1.jpg" alt="rf" /></p>
+
+<h3 id="introduction-1">Introduction</h3>
+
+<p>Random forest is one of the most famous bagging techniques in the machine learning community.
+The main difference between a normal bagging method and Random forest is that instead of considering all variables for a particular tree for the recursive split, we consider only a subset of variables.
+At each split, a random sample of m predictors is considered and is generally $\sqrt{P}$ where P is the total number of predictors. Split happens on of these m predictors.
+We can decide the size of subset but the variables for each tree are selected in a random manner.</p>
+
+<p>All the trees present in a random forest can be tuned for hyper parameters that we discussed earlier.
+Even the numebr of variables that have to be selected for each tree can be fed into the hyper parameter method.</p>
+
+<h3 id="key-points-to-note">Key points to note:</h3>
+
+<ol>
+<li>It creates a strong learner by combining the outputs from all the weak learners<br /></li>
+<li>Random forest tends to run for longer times when the number of trees are more<br /></li>
+<li>Size of tree and number of trees can be decided using k fold cross validation techniques<br /></li>
+<li>If there is strong predictor in one tree, most of the trees will use this as a first split resulting in similar trees and correlated outputs. Average of correlated outputs will not lead to much reduction in variance. So it is preferable have weak predictors and use random forests to predict the output.</li>
+<li>Random forest will not overfit even with the increase in sample size (B)<br /></li>
+<li>Variable importance measures plto gives the importance of all the variables after generating the ensemble output from all the trees.<br /></li>
+<li>For classification tasks, majority vote is considered while making the final class selection<br /></li>
+</ol>
+
+<p>All trees present in a random forest can be tuned for hyper parameters that we discussed earlier.</p>
+
+<h3 id="implementation-in-python">Implementation in Python:</h3>
+
+<pre><code>def random_forest(X,y):
+
+    # Creating the train and test split
+    from sklearn.model_selection import train_test_split
+    X_train_m, X_val_m, y_train_m, y_val_m = train_test_split(X, y, test_size=0.3, random_state=1)
+    
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.model_selection import GridSearchCV
+    from sklearn.metrics import confusion_matrix
+    from sklearn.metrics import accuracy_score
+    model = RandomForestClassifier(n_estimators = 250,max_features = None).fit(X_train_m, y_train_m)
+#     grid_params = {'criterion': ['gini'], 'max_features' : [None], 'n_estimators': [300]}
+#     para_search = GridSearchCV(model, grid_params, scoring = 'accuracy', cv = 5).fit(X_train_m, y_train_m)
+#     best_model = para_search.best_estimator_
+    labels_r = model.predict(X_val_m)
+    
+    train_mse = metrics.mean_squared_error(model.predict(X_train_m), y_train_m)
+    test_mse = metrics.mean_squared_error(labels_r, y_val_m)
+    print(train_mse)
+    print(test_mse)
+    print ('Accuracy using Random Forest:',accuracy_score(y_val_m, labels_r))
+    mat_r = confusion_matrix(y_val_m, labels_r)
+    print(mat_r)
+    return model
+</code></pre>
+
+<p>For the entire code, refer to this <a href="https://github.com/akhilesh-reddy/Salary-classification-based-on-job-description/blob/master/Salary%20prediction%20based%20on%20job%20description.ipynb" target="_blank">notebook</a></p>
+
+<h3 id="implementation-in-r">Implementation in R:</h3>
+
+<pre><code># Random Forest
+rf_model &lt;- randomForest(class_labels_train ~ .,
+                         data = X_train,
+                         ntree = 1000)
+author_predict &lt;- predict(rf_model, X_test_pc, type = &quot;response&quot;)
+answer &lt;- as.data.frame(table(author_predict, class_labels_test))
+answer$correct &lt;- ifelse(answer$author_predict==answer$class_labels_test, 1, 0)
+
+answer_rf = answer %&gt;% group_by(correct) %&gt;% summarise(&quot;Correct&quot; = sum(Freq))
+
+rf_accuracy &lt;- sum(answer$Freq[answer$correct==1])*100/sum(answer$Freq)
+  
+print(paste0(&quot;Accuracy is &quot;, rf_accuracy))
+</code></pre>
+
+<p>For the entire code, refer to this <a href="https://github.com/akhilesh-reddy/Data-Science-Mini-projects/blob/master/Author%20attribution/Author_attribution.md" target="_blank">notebook</a></p>
+
+<p>That&rsquo;s all folks! See you in the next article.</p>
+
+<p>Happy learning!</p>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/"></a>
+  
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/decision-trees/">ML Algorithms 2: Decision trees</a></li>
+        
+        <li><a href="/post/logistic-regression/">ML Algorithms 1:Logistic Regression</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2018 &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

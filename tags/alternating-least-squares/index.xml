@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>alternating least squares on Akhilesh Reddy</title>
+    <link>https://akhilesh-reddy.github.io/tags/alternating-least-squares/</link>
+    <description>Recent content in alternating least squares on Akhilesh Reddy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Sat, 19 Jan 2019 06:31:29 -0500</lastBuildDate>
+    
+	<atom:link href="https://akhilesh-reddy.github.io/tags/alternating-least-squares/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Music recommendation engine using ALS based Matrix factorization</title>
+      <link>https://akhilesh-reddy.github.io/project/music-recommendation/</link>
+      <pubDate>Sat, 19 Jan 2019 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/music-recommendation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualizing different factors that affect Austin bike sharing and recommendations for bike rebalancing </title>
+      <link>https://akhilesh-reddy.github.io/project/austin-bike-sharing/</link>
+      <pubDate>Sat, 19 Jan 2019 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/austin-bike-sharing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.52" />
+  <meta name="author" content="Akhilesh Reddy">
+
+  
+  
+  
+  
+    
+      
+    
+  
+  <meta name="description" content="I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way
+Boosting models are some of the most famous machine learning algorithms. There fame comes from the fact that they learn from their mistakes during the process sequentially. This helps those models to actually build on top of the mistakes and give faster and better results.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://akhilesh-reddy.github.io/post/xgboost-and-lightxgboost/">
+
+  
+
+
+  
+
+  
+  
+  <meta name="theme-color" content="#4caf50">
+  
+  
+  
+  
+    
+  
+  
+    
+    
+      
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+      
+    
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+  
+  
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+
+  
+  <link rel="alternate" href="https://akhilesh-reddy.github.io/index.xml" type="application/rss+xml" title="Akhilesh Reddy">
+  <link rel="feed" href="https://akhilesh-reddy.github.io/index.xml" type="application/rss+xml" title="Akhilesh Reddy">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://akhilesh-reddy.github.io/post/xgboost-and-lightxgboost/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@https://twitter.com/akhileshreddy44">
+  <meta property="twitter:creator" content="@https://twitter.com/akhileshreddy44">
+  
+  <meta property="og:site_name" content="Akhilesh Reddy">
+  <meta property="og:url" content="https://akhilesh-reddy.github.io/post/xgboost-and-lightxgboost/">
+  <meta property="og:title" content="ML Algorithms 4:Introduction to Boosting and the famous XGBoost | Akhilesh Reddy">
+  <meta property="og:description" content="I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way
+Boosting models are some of the most famous machine learning algorithms. There fame comes from the fact that they learn from their mistakes during the process sequentially. This helps those models to actually build on top of the mistakes and give faster and better results.">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-01-22T00:00:00-06:00">
+  
+  <meta property="article:modified_time" content="2019-01-22T00:00:00-06:00">
+  
+
+  
+
+  <title>ML Algorithms 4:Introduction to Boosting and the famous XGBoost | Akhilesh Reddy</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <a class="navbar-brand" href="/">Akhilesh Reddy</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/docs/resume.pdf">
+            
+            <span>Resume</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+      
+
+      
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">ML Algorithms 4:Introduction to Boosting and the famous XGBoost</h1>
+
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2019-01-22 00:00:00 -0600 CST" itemprop="datePublished dateModified">
+      Jan 22, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Akhilesh Reddy">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=ML%20Algorithms%204%3aIntroduction%20to%20Boosting%20and%20the%20famous%20XGBoost&amp;url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fxgboost-and-lightxgboost%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fxgboost-and-lightxgboost%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fxgboost-and-lightxgboost%2f&amp;title=ML%20Algorithms%204%3aIntroduction%20to%20Boosting%20and%20the%20famous%20XGBoost"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fxgboost-and-lightxgboost%2f&amp;title=ML%20Algorithms%204%3aIntroduction%20to%20Boosting%20and%20the%20famous%20XGBoost"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=ML%20Algorithms%204%3aIntroduction%20to%20Boosting%20and%20the%20famous%20XGBoost&amp;body=https%3a%2f%2fakhilesh-reddy.github.io%2fpost%2fxgboost-and-lightxgboost%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p><strong>I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way</strong><br />
+Boosting models are some of the most famous machine learning algorithms. There fame comes from the fact that they learn from their mistakes during the process sequentially.
+This helps those models to actually build on top of the mistakes and give faster and better results.</p>
+
+<p>In this post, we will be looking into the following aspects:<br />
+1. Introduction to different kinds of boosting models and how they work<br />
+2. What are the reasons for the fame of XGBoost</p>
+
+<h3 id="boosting">Boosting:</h3>
+
+<p>We all know boosting models belong to the family of ensemble methods which tend to produce strong learners by combining multiple weak learners.
+Following is the picture that briefly explains the different kinds of ensembling.</p>
+
+<p><img src="/img/ensembling.png" alt="ensembling" /></p>
+
+<p>Boosting is mainly different from bagging for one and only reason - sequential learning. In boosting, the model learns from its mistakes sequentially whereas in bagging the ensembling happens at the last step.
+Here, we take the residuals of the first model and build model on top of the residuals sequentially to identify the patterns that are not identified by the first model.</p>
+
+<p><img src="/img/gradient boosting.png" alt="Gradient boosting" /></p>
+
+<h3 id="adaboost">Adaboost:</h3>
+
+<p>Adaboost,short for Adaptive boosting, is a boosting model that is sensitive to the errors in the previous models. At each step, the model would be penalized for instances of misclassification and would be forced to make the right decision in the next iteration to reduce the total error.In Adaboost, this is traditionally performed by adding weights to the errors that occur at each step of the model.
+You can see below at each step, the decision stump is decided based on the weights assigned to each point. This changes continuously to reduce the final error.
+In the final step, all these decisions combined together will give the classification of the dataset.<br />
+For detailed mathematical explanation, you can refer <a href="https://en.wikipedia.org/wiki/AdaBoost" target="_blank">here</a></p>
+
+<p><img src="/img/adaboost.png" alt="Adaboost" /></p>
+
+<p>However, there are some limitations to Adaboost model:<br />
+1. They are sensitive to noisy and pose the risk of assigning more weight to noise<br />
+2. The same problem would be applicable to outliers also</p>
+
+<p>This takes us to our next model.</p>
+
+<h3 id="gradient-boosting">Gradient Boosting:</h3>
+
+<p>In Adaboost, the primary task is to minimize the loss and one of the best ways to do that is to find the global minima of the loss function using a gradient descent model.
+Gradient boosting trees use gradient descent optimization method to optimize the parameters by fitting a new model at each iteration.
+This class of algorithms were also described as a stage-wise additive model. This is because one new weak learner is added at a time and existing weak learners in the model are frozen and left unchanged.</p>
+
+<p>Gradient boosting is an additive model. In a general gradient descent application like regression, we optimize the parameters to achieve minimized loss. But in this case, we add one tree at each step and optmize the parameters of the tree that give minimum residual loss at that step.
+This is generally called gradient descent in functional space. This process is repeated at each step till we arrive at the specified number of trees to be used or by early stopping.</p>
+
+<p>By the end of the final iteration, we would have arrived at a model that had learnt from the mistakes of the previous models sequentially and gives out the best predictions.<br />
+<img src="/img/iter1.png" alt="iter1" />
+<img src="/img/iter50.png" alt="iter50" /></p>
+
+<p>We could should be cautious of overfitting as we increase the number of iterations for a given dataset and this warrants the use of regularization parameters.</p>
+
+<p>Key features:<br />
+1. Any differentiable loss function can be optimized using gradient descent method<br />
+2. Gradient descent happens in functional space<br />
+3. Parameters of the tree are often set through cross validation<br />
+4. Early stopping is required to avoid overfitting</p>
+
+<h3 id="xgboost">XGBoost:</h3>
+
+<p><img src="/img/xgb1.png" alt="JCM" /></p>
+
+<p>If you are part of the Kaggle eco system, then there is high chance that you would have heard about XGboost algorithm and its potential to deliver results with high speed and performance.</p>
+
+<p>XGboost,short for Extreme gradient boosting, is an algorithm that is designed for increasing speed and performance using Gradient boosting trees. <a href="https://homes.cs.washington.edu/~tqchen/" target="_blank">Tianqi chen</a> developed this algorithm while he is doing his Ph.d in University of Washington.
+XGboost is an implementation of gradient boosting trees which increases the speed and performance of the model by taking advantage of parallelization and distributed computing.</p>
+
+<p>Most important features of XGBoost can be divided into<br />
+<strong>System features</strong><br />
+It enables of the parallelization of tree construction using all cores during training<br />
+Distributed computing is made possible using cluster of machines using XGBoost
+It employs the concept of cache optimization which makes it more efficient</p>
+
+<p><strong>Algorithmic features</strong><br />
+1.Sparse aware: It automatic handling of missign data values<br />
+2.Block structure: It supports parallelization of tree structures as mentioned already in the system features</p>
+
+<p><strong>Key points to remember while running an XGBoost model:</strong><br />
+1. Avoid overfitting by using early stopping<br />
+2. Use cross validation while pruning the trees<br />
+3. Use xgb.Dmatrix to create train and test datasets<br />
+4. Always perform hyperparameter search(Random search would work well than Grid search)</p>
+
+<p>That&rsquo;s all folks. See you later in the next article.
+Happy learning!</p>
+
+<p>References:<br />
+[1] <a href="https://towardsdatascience.com/boosting-in-machine-learning-and-the-implementation-of-xgboost-in-python-fb5365e9f2a0" target="_blank">https://towardsdatascience.com/boosting-in-machine-learning-and-the-implementation-of-xgboost-in-python-fb5365e9f2a0</a><br />
+[2] <a href="https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/" target="_blank">https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/</a><br />
+[3] <a href="https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d" target="_blank">https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d</a><br />
+[4] <a href="https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052" target="_blank">https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052</a><br />
+[5] <a href="http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/" target="_blank">http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/</a><br />
+[6] <a href="http://statweb.stanford.edu/~jhf/ftp/trebst.pdf" target="_blank">http://statweb.stanford.edu/~jhf/ftp/trebst.pdf</a><br />
+<strong>[7] <a href="https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/" target="_blank">https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/</a></strong></p>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/tags/"></a>
+  
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/bagging-and-random-forests/">ML Algorithms 3: Bagging and Random forests </a></li>
+        
+        <li><a href="/post/decision-trees/">ML Algorithms 2: Decision trees</a></li>
+        
+        <li><a href="/post/logistic-regression/">ML Algorithms 1:Logistic Regression</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2018 &middot; 
+
+      Powered by the
+      <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Cite</h4>
+      </div>
+      <div>
+        <pre><code class="modal-body tex"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
+          <i class="fa fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
+          <i class="fa fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML" integrity="sha512-tOav5w1OjvsSJzePRtt2uQPFwBoHt1VZcUq8l8nm5284LEKE9FSJBQryzMBzHxY5P0zRdNqEcpLIRVYFNgu1jw==" crossorigin="anonymous"></script>
+    
+    
+
+  </body>
+</html>
+

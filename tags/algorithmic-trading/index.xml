@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithmic-trading on SAI PRANEETH</title>
+    <link>/tags/algorithmic-trading/</link>
+    <description>Recent content in Algorithmic-trading on SAI PRANEETH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 19 Jan 2018 06:31:29 -0500</lastBuildDate>
+    
+	<atom:link href="/tags/algorithmic-trading/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pairs Trading with Machine Learning</title>
+      <link>/project/pairs/</link>
+      <pubDate>Fri, 19 Jan 2018 06:31:29 -0500</pubDate>
+      
+      <guid>/project/pairs/</guid>
+      <description>[still working]</description>
+    </item>
+    
+  </channel>
+</rss>

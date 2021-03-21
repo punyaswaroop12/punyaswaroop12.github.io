@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XGboost on Akhilesh Reddy</title>
+    <link>https://akhilesh-reddy.github.io/tags/xgboost/</link>
+    <description>Recent content in XGboost on Akhilesh Reddy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 19 Jan 2018 06:31:29 -0500</lastBuildDate>
+    
+	<atom:link href="https://akhilesh-reddy.github.io/tags/xgboost/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test time prediction for Mercedes Benz using XGboost</title>
+      <link>https://akhilesh-reddy.github.io/project/predicting-the-testing-time-of-mercedes-benz/</link>
+      <pubDate>Fri, 19 Jan 2018 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/predicting-the-testing-time-of-mercedes-benz/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

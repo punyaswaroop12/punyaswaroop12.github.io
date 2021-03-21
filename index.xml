@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Akhilesh Reddy on Akhilesh Reddy</title>
+    <link>https://akhilesh-reddy.github.io/</link>
+    <description>Recent content in Akhilesh Reddy on Akhilesh Reddy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 -0500</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Recommender system using Bayesian personalized ranking</title>
+      <link>https://akhilesh-reddy.github.io/post/bpr/</link>
+      <pubDate>Mon, 04 Feb 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/bpr/</guid>
+      <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/recommender-system-using-bayesian-personalized-ranking-d30e98bba0b9&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How Twitter does it? Challenges in implementing recommender systems at scale</title>
+      <link>https://akhilesh-reddy.github.io/post/twitter/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/twitter/</guid>
+      <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/how-twitter-does-it-challenges-in-implementing-recommender-systems-at-scale-353f7a1ae4ab&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sketch recognition using Mobilenet</title>
+      <link>https://akhilesh-reddy.github.io/post/sketch-recognition/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/sketch-recognition/</guid>
+      <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/doodling-with-deep-learning-1b0e11b858aa&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scraping Reddit data using Python and Google BigQuery</title>
+      <link>https://akhilesh-reddy.github.io/post/medium/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/medium/</guid>
+      <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/scrape-reddit-data-using-python-and-google-bigquery-44180b579892&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ML Algorithms 4:Introduction to Boosting and the famous XGBoost</title>
+      <link>https://akhilesh-reddy.github.io/post/xgboost-and-lightxgboost/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/xgboost-and-lightxgboost/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way&lt;/strong&gt;&lt;br /&gt;
+Boosting models are some of the most famous machine learning algorithms. There fame comes from the fact that they learn from their mistakes during the process sequentially.
+This helps those models to actually build on top of the mistakes and give faster and better results.&lt;/p&gt;
+
+&lt;p&gt;In this post, we will be looking into the following aspects:&lt;br /&gt;
+1. Introduction to different kinds of boosting models and how they work&lt;br /&gt;
+2. What are the reasons for the fame of XGBoost&lt;/p&gt;
+
+&lt;h3 id=&#34;boosting&#34;&gt;Boosting:&lt;/h3&gt;
+
+&lt;p&gt;We all know boosting models belong to the family of ensemble methods which tend to produce strong learners by combining multiple weak learners.
+Following is the picture that briefly explains the different kinds of ensembling.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/ensembling.png&#34; alt=&#34;ensembling&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Boosting is mainly different from bagging for one and only reason - sequential learning. In boosting, the model learns from its mistakes sequentially whereas in bagging the ensembling happens at the last step.
+Here, we take the residuals of the first model and build model on top of the residuals sequentially to identify the patterns that are not identified by the first model.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/gradient boosting.png&#34; alt=&#34;Gradient boosting&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;adaboost&#34;&gt;Adaboost:&lt;/h3&gt;
+
+&lt;p&gt;Adaboost,short for Adaptive boosting, is a boosting model that is sensitive to the errors in the previous models. At each step, the model would be penalized for instances of misclassification and would be forced to make the right decision in the next iteration to reduce the total error.In Adaboost, this is traditionally performed by adding weights to the errors that occur at each step of the model.
+You can see below at each step, the decision stump is decided based on the weights assigned to each point. This changes continuously to reduce the final error.
+In the final step, all these decisions combined together will give the classification of the dataset.&lt;br /&gt;
+For detailed mathematical explanation, you can refer &lt;a href=&#34;https://en.wikipedia.org/wiki/AdaBoost&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/adaboost.png&#34; alt=&#34;Adaboost&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;However, there are some limitations to Adaboost model:&lt;br /&gt;
+1. They are sensitive to noisy and pose the risk of assigning more weight to noise&lt;br /&gt;
+2. The same problem would be applicable to outliers also&lt;/p&gt;
+
+&lt;p&gt;This takes us to our next model.&lt;/p&gt;
+
+&lt;h3 id=&#34;gradient-boosting&#34;&gt;Gradient Boosting:&lt;/h3&gt;
+
+&lt;p&gt;In Adaboost, the primary task is to minimize the loss and one of the best ways to do that is to find the global minima of the loss function using a gradient descent model.
+Gradient boosting trees use gradient descent optimization method to optimize the parameters by fitting a new model at each iteration.
+This class of algorithms were also described as a stage-wise additive model. This is because one new weak learner is added at a time and existing weak learners in the model are frozen and left unchanged.&lt;/p&gt;
+
+&lt;p&gt;Gradient boosting is an additive model. In a general gradient descent application like regression, we optimize the parameters to achieve minimized loss. But in this case, we add one tree at each step and optmize the parameters of the tree that give minimum residual loss at that step.
+This is generally called gradient descent in functional space. This process is repeated at each step till we arrive at the specified number of trees to be used or by early stopping.&lt;/p&gt;
+
+&lt;p&gt;By the end of the final iteration, we would have arrived at a model that had learnt from the mistakes of the previous models sequentially and gives out the best predictions.&lt;br /&gt;
+&lt;img src=&#34;https://akhilesh-reddy.github.io/img/iter1.png&#34; alt=&#34;iter1&#34; /&gt;
+&lt;img src=&#34;https://akhilesh-reddy.github.io/img/iter50.png&#34; alt=&#34;iter50&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We could should be cautious of overfitting as we increase the number of iterations for a given dataset and this warrants the use of regularization parameters.&lt;/p&gt;
+
+&lt;p&gt;Key features:&lt;br /&gt;
+1. Any differentiable loss function can be optimized using gradient descent method&lt;br /&gt;
+2. Gradient descent happens in functional space&lt;br /&gt;
+3. Parameters of the tree are often set through cross validation&lt;br /&gt;
+4. Early stopping is required to avoid overfitting&lt;/p&gt;
+
+&lt;h3 id=&#34;xgboost&#34;&gt;XGBoost:&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/xgb1.png&#34; alt=&#34;JCM&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you are part of the Kaggle eco system, then there is high chance that you would have heard about XGboost algorithm and its potential to deliver results with high speed and performance.&lt;/p&gt;
+
+&lt;p&gt;XGboost,short for Extreme gradient boosting, is an algorithm that is designed for increasing speed and performance using Gradient boosting trees. &lt;a href=&#34;https://homes.cs.washington.edu/~tqchen/&#34; target=&#34;_blank&#34;&gt;Tianqi chen&lt;/a&gt; developed this algorithm while he is doing his Ph.d in University of Washington.
+XGboost is an implementation of gradient boosting trees which increases the speed and performance of the model by taking advantage of parallelization and distributed computing.&lt;/p&gt;
+
+&lt;p&gt;Most important features of XGBoost can be divided into&lt;br /&gt;
+&lt;strong&gt;System features&lt;/strong&gt;&lt;br /&gt;
+It enables of the parallelization of tree construction using all cores during training&lt;br /&gt;
+Distributed computing is made possible using cluster of machines using XGBoost
+It employs the concept of cache optimization which makes it more efficient&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Algorithmic features&lt;/strong&gt;&lt;br /&gt;
+1.Sparse aware: It automatic handling of missign data values&lt;br /&gt;
+2.Block structure: It supports parallelization of tree structures as mentioned already in the system features&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Key points to remember while running an XGBoost model:&lt;/strong&gt;&lt;br /&gt;
+1. Avoid overfitting by using early stopping&lt;br /&gt;
+2. Use cross validation while pruning the trees&lt;br /&gt;
+3. Use xgb.Dmatrix to create train and test datasets&lt;br /&gt;
+4. Always perform hyperparameter search(Random search would work well than Grid search)&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s all folks. See you later in the next article.
+Happy learning!&lt;/p&gt;
+
+&lt;p&gt;References:&lt;br /&gt;
+[1] &lt;a href=&#34;https://towardsdatascience.com/boosting-in-machine-learning-and-the-implementation-of-xgboost-in-python-fb5365e9f2a0&#34; target=&#34;_blank&#34;&gt;https://towardsdatascience.com/boosting-in-machine-learning-and-the-implementation-of-xgboost-in-python-fb5365e9f2a0&lt;/a&gt;&lt;br /&gt;
+[2] &lt;a href=&#34;https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/&#34; target=&#34;_blank&#34;&gt;https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/&lt;/a&gt;&lt;br /&gt;
+[3] &lt;a href=&#34;https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d&#34; target=&#34;_blank&#34;&gt;https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d&lt;/a&gt;&lt;br /&gt;
+[4] &lt;a href=&#34;https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052&#34; target=&#34;_blank&#34;&gt;https://towardsdatascience.com/decision-trees-in-machine-learning-641b9c4e8052&lt;/a&gt;&lt;br /&gt;
+[5] &lt;a href=&#34;http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/&#34; target=&#34;_blank&#34;&gt;http://blog.kaggle.com/2017/01/23/a-kaggle-master-explains-gradient-boosting/&lt;/a&gt;&lt;br /&gt;
+[6] &lt;a href=&#34;http://statweb.stanford.edu/~jhf/ftp/trebst.pdf&#34; target=&#34;_blank&#34;&gt;http://statweb.stanford.edu/~jhf/ftp/trebst.pdf&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;[7] &lt;a href=&#34;https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/&#34; target=&#34;_blank&#34;&gt;https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ML Algorithms 3: Bagging and Random forests </title>
+      <link>https://akhilesh-reddy.github.io/post/bagging-and-random-forests/</link>
+      <pubDate>Mon, 21 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/bagging-and-random-forests/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;https://akhilesh-reddy.github.io/img/ensembling.png&#34; alt=&#34;ensembling&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;bagging&#34;&gt;&lt;strong&gt;Bagging&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;Bagging is an ensemble technique. In this method, instead of training just one tree, we train hundreds of trees and create an ensemble of the output at the end.
+For each tree, instead of taking the entire data, we take only a few datapoints as a bagging sample.&lt;br /&gt;
+Each tree is let to grow like any other normal tree. All the methods that are discussed in the &amp;ldquo;Decision trees&amp;rdquo; post are still applicable here.
+At the end, all the hundreds of trees give different outputs and all these outputs are generally averaged to come up with the final class or prediction for a particular data point.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;It is important to note that trees are not pruned in bagging methods. This is because if each tree overfits and has high variance, bagging will capture information from all these overfitted trees and results in a better output&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;why-bagging&#34;&gt;Why bagging?&lt;/h3&gt;
+
+&lt;p&gt;The main benefits of using this method is that it reduces the chances of overfitting and takes advantage of the weakness of different trees and create a single strong learner.
+If we have multiple trees that are uncorrelated, in other words, if they have high variance then the final ensembled output would have a higher accuracy as it is learning different values from different trees and will rightly learn different patterns present in the data.&lt;/p&gt;
+
+&lt;h2 id=&#34;random-forest&#34;&gt;&lt;strong&gt;Random Forest&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/rf1.jpg&#34; alt=&#34;rf&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;introduction-1&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;Random forest is one of the most famous bagging techniques in the machine learning community.
+The main difference between a normal bagging method and Random forest is that instead of considering all variables for a particular tree for the recursive split, we consider only a subset of variables.
+At each split, a random sample of m predictors is considered and is generally $\sqrt{P}$ where P is the total number of predictors. Split happens on of these m predictors.
+We can decide the size of subset but the variables for each tree are selected in a random manner.&lt;/p&gt;
+
+&lt;p&gt;All the trees present in a random forest can be tuned for hyper parameters that we discussed earlier.
+Even the numebr of variables that have to be selected for each tree can be fed into the hyper parameter method.&lt;/p&gt;
+
+&lt;h3 id=&#34;key-points-to-note&#34;&gt;Key points to note:&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;It creates a strong learner by combining the outputs from all the weak learners&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Random forest tends to run for longer times when the number of trees are more&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Size of tree and number of trees can be decided using k fold cross validation techniques&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;If there is strong predictor in one tree, most of the trees will use this as a first split resulting in similar trees and correlated outputs. Average of correlated outputs will not lead to much reduction in variance. So it is preferable have weak predictors and use random forests to predict the output.&lt;/li&gt;
+&lt;li&gt;Random forest will not overfit even with the increase in sample size (B)&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Variable importance measures plto gives the importance of all the variables after generating the ensemble output from all the trees.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;For classification tasks, majority vote is considered while making the final class selection&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;All trees present in a random forest can be tuned for hyper parameters that we discussed earlier.&lt;/p&gt;
+
+&lt;h3 id=&#34;implementation-in-python&#34;&gt;Implementation in Python:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;def random_forest(X,y):
+
+    # Creating the train and test split
+    from sklearn.model_selection import train_test_split
+    X_train_m, X_val_m, y_train_m, y_val_m = train_test_split(X, y, test_size=0.3, random_state=1)
+    
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.model_selection import GridSearchCV
+    from sklearn.metrics import confusion_matrix
+    from sklearn.metrics import accuracy_score
+    model = RandomForestClassifier(n_estimators = 250,max_features = None).fit(X_train_m, y_train_m)
+#     grid_params = {&#39;criterion&#39;: [&#39;gini&#39;], &#39;max_features&#39; : [None], &#39;n_estimators&#39;: [300]}
+#     para_search = GridSearchCV(model, grid_params, scoring = &#39;accuracy&#39;, cv = 5).fit(X_train_m, y_train_m)
+#     best_model = para_search.best_estimator_
+    labels_r = model.predict(X_val_m)
+    
+    train_mse = metrics.mean_squared_error(model.predict(X_train_m), y_train_m)
+    test_mse = metrics.mean_squared_error(labels_r, y_val_m)
+    print(train_mse)
+    print(test_mse)
+    print (&#39;Accuracy using Random Forest:&#39;,accuracy_score(y_val_m, labels_r))
+    mat_r = confusion_matrix(y_val_m, labels_r)
+    print(mat_r)
+    return model
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For the entire code, refer to this &lt;a href=&#34;https://github.com/akhilesh-reddy/Salary-classification-based-on-job-description/blob/master/Salary%20prediction%20based%20on%20job%20description.ipynb&#34; target=&#34;_blank&#34;&gt;notebook&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;implementation-in-r&#34;&gt;Implementation in R:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;# Random Forest
+rf_model &amp;lt;- randomForest(class_labels_train ~ .,
+                         data = X_train,
+                         ntree = 1000)
+author_predict &amp;lt;- predict(rf_model, X_test_pc, type = &amp;quot;response&amp;quot;)
+answer &amp;lt;- as.data.frame(table(author_predict, class_labels_test))
+answer$correct &amp;lt;- ifelse(answer$author_predict==answer$class_labels_test, 1, 0)
+
+answer_rf = answer %&amp;gt;% group_by(correct) %&amp;gt;% summarise(&amp;quot;Correct&amp;quot; = sum(Freq))
+
+rf_accuracy &amp;lt;- sum(answer$Freq[answer$correct==1])*100/sum(answer$Freq)
+  
+print(paste0(&amp;quot;Accuracy is &amp;quot;, rf_accuracy))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For the entire code, refer to this &lt;a href=&#34;https://github.com/akhilesh-reddy/Data-Science-Mini-projects/blob/master/Author%20attribution/Author_attribution.md&#34; target=&#34;_blank&#34;&gt;notebook&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s all folks! See you in the next article.&lt;/p&gt;
+
+&lt;p&gt;Happy learning!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Music recommendation engine using ALS based Matrix factorization</title>
+      <link>https://akhilesh-reddy.github.io/project/music-recommendation/</link>
+      <pubDate>Sat, 19 Jan 2019 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/music-recommendation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sketch recognition using Mobilenet</title>
+      <link>https://akhilesh-reddy.github.io/project/sketch-recognition/</link>
+      <pubDate>Sat, 19 Jan 2019 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/sketch-recognition/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualizing different factors that affect Austin bike sharing and recommendations for bike rebalancing </title>
+      <link>https://akhilesh-reddy.github.io/project/austin-bike-sharing/</link>
+      <pubDate>Sat, 19 Jan 2019 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/austin-bike-sharing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ML Algorithms 2: Decision trees</title>
+      <link>https://akhilesh-reddy.github.io/post/decision-trees/</link>
+      <pubDate>Sat, 19 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/decision-trees/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;https://akhilesh-reddy.github.io/img/decision tree.png&#34; alt=&#34;decision tree&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;Decision trees are a class of machine learning algorithms that decide the output class of a datapoint based on a series of binary decisions using the variables in the dataset.
+This split is generally called binary recrusive split and happens at each step of the tree. A single parent node will be split into 2 child nodes based on a particular variable.&lt;br /&gt;
+At the end of it, we obtain the final child nodes which are called leaves. Now the number of leaves that can be created depends on how we long we want the tree to grow.&lt;/p&gt;
+
+&lt;p&gt;For example, if there are a 100 students and each of them have their resident status listed as either resident or non-resident. Now at the first split of the decision tree, the entire 100 students will be split into 2 groups, resident or non-resident based on the data.&lt;/p&gt;
+
+&lt;p&gt;How does this happen?&lt;br /&gt;
+Well, in real life scenario we will have more than one variable that describes a particular datapoint like age, sex, occupation e.t.c.&lt;br /&gt;
+In this case, there are multiple methods that are used to determine the best variable to be used to split the data at a particular step.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Gini index : Gini index gives a measure of total variance across all the classes and the smaller Gini index indicates higher node purity.&lt;br /&gt;
+&lt;img src=&#34;https://akhilesh-reddy.github.io/img/gini index.jpg&#34; alt=&#34;gini&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Entropy : This metric is used to calculate the purity of child nodes that are created after splitting the parent node. Higher the purity of the child nodes, lesser is the entropy.&lt;br /&gt;
+&lt;img src=&#34;https://akhilesh-reddy.github.io/img/entropy.png&#34; alt=&#34;entropy&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Chi-square : Chi-square value is calculated for each variable for the available data at that step of the decision tree. Higher the chi-square value, higher is the important of the variable.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;hyperparameter-tuning&#34;&gt;Hyperparameter tuning:&lt;/h3&gt;
+
+&lt;p&gt;If the tree grows too large, there is a chance for overfitting. It means that the tree will have high variance and will give high error rates for any new test data. To avoid, we generally perform cross validation on a particular metric like rmse to select the number of leaves that are reasonable to avoid overfitting.
+We can have various metrics to find the optimal parameters such as accuracy and misclassification error rate. We can tune multiple other parameters of a tree like maximum number of datapoints in each child node, minimum datapoints required to split a parent node into children nodes e.t.c&lt;/p&gt;
+
+&lt;p&gt;Generally, there are 3 types of search techniques that we use for hyper parameter tuning.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Grid search :&lt;/strong&gt; We specify a list of parameters that we think would be reasonable for the data we have and the algorithm searches for all the combinations.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Random search :&lt;/strong&gt; The algorithm picks the combinations randomly and decides on the final combinations that will reduce the cost&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bayesian parameter optimization :&lt;/strong&gt; In this method, the knowledge from the previous combination will be carried to the search of the next combination. In other words, the second combination will be conditional on the output of the first combination and continues accordingly.&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;All these algorithms run on different folds of cross validation data to decide on the best parameters for the trees.&lt;/p&gt;
+
+&lt;h3 id=&#34;pruning&#34;&gt;Pruning:&lt;/h3&gt;
+
+&lt;p&gt;There is one more method to avoid overfitting of the tree called Pruning. In this method, we let the tree grow to its maximum possible size and at the end we prune the tree based on k-fold cross validation technique.
+Pruning method randomly removes branches from the trees and calculates the error rate or misclassification rate of the tree. For every subsequent step,if the error rate increases on removing a particular branch, the branch will be replaced back to the tree.&lt;br /&gt;
+If the cross validation error rate decreases, the branch will be permanently removed from the tree and the nodes would become the final nodes at that part of the tree.&lt;br /&gt;
+This method is more technically called &amp;ldquo;Cost-complexity pruning&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s all folks. See you later in the next article.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cable-cord cutter sentiment analysis using Reddit data</title>
+      <link>https://akhilesh-reddy.github.io/project/cable-cord-cutters-sentiment-analysis-using-reddit-data/</link>
+      <pubDate>Fri, 18 Jan 2019 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/cable-cord-cutters-sentiment-analysis-using-reddit-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Salary prediction based on job description using XGboost</title>
+      <link>https://akhilesh-reddy.github.io/project/salary-prediction-based-on-job-description/</link>
+      <pubDate>Fri, 18 Jan 2019 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/salary-prediction-based-on-job-description/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ML Algorithms 1:Logistic Regression</title>
+      <link>https://akhilesh-reddy.github.io/post/logistic-regression/</link>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/logistic-regression/</guid>
+      <description>
+
+&lt;p&gt;This is my first post of a series of summaries of machine learning algorithms. I personally took this up to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others.
+In this post, i would be talking about logistic regression which is still very widely used for classification in multiple industries.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://akhilesh-reddy.github.io/img/log reg.png&#34; alt=&#34;JCM&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;Logistic regression is primarily a binary classifier which is used when the dependent variable is a categorical variable. Although, we know that linear regression is used for a dependent continuous variable,it might be tempting to use linear regression for a classification task. But we should be aware of the fact that final prediction of linear regression can go beyond 1 and be less than 0 which are not acceptable as a probability value.
+&lt;img src=&#34;https://akhilesh-reddy.github.io/img/logreg.jpg&#34; alt=&#34;JCM&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So this takes us to the next step of logistic regression which is the logit function.&lt;/p&gt;
+
+&lt;h3 id=&#34;mathematical-explanation&#34;&gt;Mathematical explanation&lt;/h3&gt;
+
+&lt;p&gt;Following is a logit function in a matrix form with X being the independent variable matrix and Y being the probability value.
+$${Pr}(Y=1/ {X}) = \frac{\text{e}^{\beta X}}{1 + \text{e}^{\beta X}}$$&lt;br/&gt;``&lt;/p&gt;
+
+&lt;p&gt;It is also called sigmoid function.
+&lt;img src=&#34;https://akhilesh-reddy.github.io/img/sigmoid.png&#34; alt=&#34;sigmoid&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Logit function restricts the final prediction value between 0 and 1 and would help in making the final classfication by using a threshold value. Lets go ahead and understand how logistic regression works.&lt;/p&gt;
+
+&lt;p&gt;For simplicity, let us consider&lt;/p&gt;
+
+&lt;p&gt;$${Pr}({X}) = {Pr}(Y = 1/{X})$$&lt;br/&gt;&lt;/p&gt;
+
+&lt;p&gt;Now rearranging the logit equation we get,
+$$\frac{{Pr}({X})}{1 - {Pr}({X})} = \text{e}^{\beta X}$$&lt;/p&gt;
+
+&lt;p&gt;Now this will let us calculate the odds of a particular event happening and the value ranges from 0 to infinity. Taking log on both sides converts this into a linear equation which can be solved using maximum likelihood method.
+$$\ln (\frac{{Pr}({X})}{1 - {Pr}({X})}) = \beta X$$&lt;/p&gt;
+
+&lt;p&gt;In an situation with just one independent variable(x1), increasing the value of x1 changes the logodds by $\beta1$&lt;/p&gt;
+
+&lt;p&gt;Types of logistic regression:
+1. Binary logistic regreesion:  When there are only two putput classes
+2. Multinomial : When there are more than 2 output classes&lt;br /&gt;
+3. Ordinal : When the output classes are ordinal in nature like ratings(1 to 5)&lt;/p&gt;
+
+&lt;h3 id=&#34;how-to-do-multiclass-logistic-regression-using-a-binary-logistic-regression&#34;&gt;How to do multiclass logistic regression using a binary logistic regression?&lt;/h3&gt;
+
+&lt;p&gt;We will use all vs one approach to solve this problem.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say there are 4 classes in our dataset and 0,1,2,3 are their class labels&lt;br /&gt;
+We will have to first train different logistic binary classifier in the following way.
+1. We should fix one class as a reference class and will have to create 3 different binary classifiers one for each of the other classes.&lt;br /&gt;
+2. Split the data into 3 parts, with each set containing the datapoints labelled with the selected 2 classes.&lt;br /&gt;
+3. Build a classifier with classes 0 and 1 with 0 fixed as the reference class.&lt;br /&gt;
+4. We will then obtain the parameter coefficient for the log odds of these 2 classes represented by the following equation.&lt;br /&gt;
+&lt;center&gt; log(odds) = $\ \beta_1 X$&lt;/center&gt;&lt;br /&gt;
+5. In a similar fashion, we build 2 other logistic classifiers and estimate the respective beta coefficients($\ \beta_2 $,$\ \beta_3 $) for those classes.&lt;/p&gt;
+
+&lt;p&gt;Finally, it&amp;rsquo;s time to predict the class for a test data point.&lt;/p&gt;
+
+&lt;p&gt;Every single data point is passed through each of these 3 classifiers and log odds are calculated through classifiers.&lt;/p&gt;
+
+&lt;p&gt;There are 2 possible outcomes.&lt;br /&gt;
+    1. If any of the logodds are +ve and also the highest among the other classifiers, then we choose that class as the final label.&lt;br /&gt;
+    2. If all the log odds are -ve, then we choose the reference class, which is 0 in our case as the class label for the datapoint.&lt;/p&gt;
+
+&lt;h3 id=&#34;keypoints-in-logistic-regression&#34;&gt;Keypoints in Logistic Regression:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Does NOT assume a linear relationship between the dependent variable and the independent variables, but it does assume linear relationship between the logit of the explanatory variables and the response.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Independent variables can be even the power terms or some other nonlinear transformations of the original independent variables&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;The dependent variable does NOT need to be normally distributed, but it typically assumes a distribution from an exponential family (e.g. binomial, Poisson, multinomial, normal,&amp;hellip;); binary logistic regression assume binomial distribution of the response&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;The homogeneity of variance does NOT need to be satisfied&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Errors need to be independent but NOT normally distributed&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;It uses maximum likelihood estimation (MLE) rather than ordinary least squares (OLS) to estimate the parameters, and thus relies on large-sample approximations&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;implementation-in-r&#34;&gt;Implementation in R:&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;#### Creating train and test data
+
+set.seed(99)
+train &amp;lt;- createDataPartition(y=sel_features_dat_vf$y1,p=0.8,list=FALSE)
+train_data &amp;lt;- sel_features_dat_vf[train,]
+test_data &amp;lt;- sel_features_dat_vf[-train,]
+
+set.seed(99)
+model &amp;lt;- glm(train_data$y1 ~.,family=binomial(link=&#39;logit&#39;),data=train_data)
+summary(model)
+
+#### Assessing the predictive ability of the model
+
+fitted.results &amp;lt;- predict(model,test_data[,1:17],type=&#39;response&#39;)
+answers = test_data$y1
+
+
+# Confusion matrix
+cm_logistic &amp;lt;- table(answers, fitted.results&amp;gt;= 0.3)
+
+head(fitted.results)
+
+# ROC Curve
+
+ROCRpred &amp;lt;- prediction(fitted.results, test_data$y1)
+ROCRperf_log &amp;lt;- performance(ROCRpred, &#39;tpr&#39;,&#39;fpr&#39;)
+
+p_roc_logistic &amp;lt;- plot(ROCRperf_log, text.adj = c(-0.2,1.7))
+
+#Sensitivity and specificity
+sens_spec_ROCR &amp;lt;- performance(ROCRpred, measure = &amp;quot;sens&amp;quot;,x.measure = &amp;quot;cutoff&amp;quot;)
+plot(sens_spec_ROCR, text.adj = c(-0.2,1.7))
+
+# Calculating the cutoff
+cost.perf = performance(ROCRpred, &amp;quot;cost&amp;quot;)
+ROCRpred@cutoffs[[1]][which.min(cost.perf@y.values[[1]])]
+
+# AUC calculation
+auc_ROCR &amp;lt;- performance(ROCRpred, measure = &amp;quot;auc&amp;quot;)
+auc_ROCR
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;br /&gt;
+[1] &lt;a href=&#34;https://newonlinecourses.science.psu.edu/stat504/node/164/&#34; target=&#34;_blank&#34;&gt;https://newonlinecourses.science.psu.edu/stat504/node/164/&lt;/a&gt;&lt;br /&gt;
+[2] &lt;a href=&#34;https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc&#34; target=&#34;_blank&#34;&gt;https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc&lt;/a&gt;&lt;br /&gt;
+[3] &lt;a href=&#34;https://www.theanalysisfactor.com/the-distribution-of-dependent-variables/&#34; target=&#34;_blank&#34;&gt;https://www.theanalysisfactor.com/the-distribution-of-dependent-variables/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Association between grocery items using Apriori algorithm and Gephi visualization</title>
+      <link>https://akhilesh-reddy.github.io/project/association-between-retail-items/</link>
+      <pubDate>Fri, 19 Jan 2018 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/association-between-retail-items/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Author attribution using TF-IDF, PCA and Randomforest</title>
+      <link>https://akhilesh-reddy.github.io/project/author-attribution/</link>
+      <pubDate>Fri, 19 Jan 2018 06:31:29 -0500</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/project/author-attribution/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

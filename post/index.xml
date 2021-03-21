@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Akhilesh Reddy</title>
+    <link>https://akhilesh-reddy.github.io/post/</link>
+    <description>Recent content in Posts on Akhilesh Reddy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 -0600</lastBuildDate>
+    
+	<atom:link href="https://akhilesh-reddy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recommender system using Bayesian personalized ranking</title>
+      <link>https://akhilesh-reddy.github.io/post/bpr/</link>
+      <pubDate>Mon, 04 Feb 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/bpr/</guid>
+      <description>This article is originally published in Towards Data science. Click here to read the article.</description>
+    </item>
+    
+    <item>
+      <title>How Twitter does it? Challenges in implementing recommender systems at scale</title>
+      <link>https://akhilesh-reddy.github.io/post/twitter/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/twitter/</guid>
+      <description>This article is originally published in Towards Data science. Click here to read the article.</description>
+    </item>
+    
+    <item>
+      <title>Sketch recognition using Mobilenet</title>
+      <link>https://akhilesh-reddy.github.io/post/sketch-recognition/</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/sketch-recognition/</guid>
+      <description>This article is originally published in Towards Data science. Click here to read the article.</description>
+    </item>
+    
+    <item>
+      <title>Scraping Reddit data using Python and Google BigQuery</title>
+      <link>https://akhilesh-reddy.github.io/post/medium/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/medium/</guid>
+      <description>This article is originally published in Towards Data science. Click here to read the article.</description>
+    </item>
+    
+    <item>
+      <title>ML Algorithms 4:Introduction to Boosting and the famous XGBoost</title>
+      <link>https://akhilesh-reddy.github.io/post/xgboost-and-lightxgboost/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/xgboost-and-lightxgboost/</guid>
+      <description>I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way
+Boosting models are some of the most famous machine learning algorithms. There fame comes from the fact that they learn from their mistakes during the process sequentially. This helps those models to actually build on top of the mistakes and give faster and better results.</description>
+    </item>
+    
+    <item>
+      <title>ML Algorithms 3: Bagging and Random forests </title>
+      <link>https://akhilesh-reddy.github.io/post/bagging-and-random-forests/</link>
+      <pubDate>Mon, 21 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/bagging-and-random-forests/</guid>
+      <description>I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way
+Bagging Introduction Bagging is an ensemble technique. In this method, instead of training just one tree, we train hundreds of trees and create an ensemble of the output at the end. For each tree, instead of taking the entire data, we take only a few datapoints as a bagging sample.</description>
+    </item>
+    
+    <item>
+      <title>ML Algorithms 2: Decision trees</title>
+      <link>https://akhilesh-reddy.github.io/post/decision-trees/</link>
+      <pubDate>Sat, 19 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/decision-trees/</guid>
+      <description>I am writing these series of posts to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others in an intuitive way
+Introduction Decision trees are a class of machine learning algorithms that decide the output class of a datapoint based on a series of binary decisions using the variables in the dataset. This split is generally called binary recrusive split and happens at each step of the tree.</description>
+    </item>
+    
+    <item>
+      <title>ML Algorithms 1:Logistic Regression</title>
+      <link>https://akhilesh-reddy.github.io/post/logistic-regression/</link>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 -0600</pubDate>
+      
+      <guid>https://akhilesh-reddy.github.io/post/logistic-regression/</guid>
+      <description>This is my first post of a series of summaries of machine learning algorithms. I personally took this up to challenge myself to enhance my skill in communciating machine learning and statistical concepts to others. In this post, i would be talking about logistic regression which is still very widely used for classification in multiple industries.
+Introduction Logistic regression is primarily a binary classifier which is used when the dependent variable is a categorical variable.</description>
+    </item>
+    
+  </channel>
+</rss>
