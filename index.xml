@@ -11,46 +11,6 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Recommender system using Bayesian personalized ranking</title>
-      <link>https://punyaswaroop12.github.io/post/bpr/</link>
-      <pubDate>Mon, 04 Feb 2019 00:00:00 -0600</pubDate>
-      
-      <guid>https://punyaswaroop12.github.io/post/bpr/</guid>
-      <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/recommender-system-using-bayesian-personalized-ranking-d30e98bba0b9&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How Twitter does it? Challenges in implementing recommender systems at scale</title>
-      <link>https://punyaswaroop12.github.io/post/twitter/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
-      
-      <guid>https://punyaswaroop12.github.io/post/twitter/</guid>
-      <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/how-twitter-does-it-challenges-in-implementing-recommender-systems-at-scale-353f7a1ae4ab&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Sketch recognition using Mobilenet</title>
-      <link>https://punyaswaroop12.github.io/post/sketch-recognition/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
-      
-      <guid>https://punyaswaroop12.github.io/post/sketch-recognition/</guid>
-      <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/doodling-with-deep-learning-1b0e11b858aa&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Scraping Reddit data using Python and Google BigQuery</title>
-      <link>https://punyaswaroop12.github.io/post/medium/</link>
-      <pubDate>Sat, 26 Jan 2019 00:00:00 -0600</pubDate>
-      
-      <guid>https://punyaswaroop12.github.io/post/medium/</guid>
-      <description>&lt;p&gt;This article is originally published in Towards Data science. Click &lt;a href=&#34;https://towardsdatascience.com/scrape-reddit-data-using-python-and-google-bigquery-44180b579892&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; to read the article.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>ML Algorithms 4:Introduction to Boosting and the famous XGBoost</title>
       <link>https://punyaswaroop12.github.io/post/xgboost-and-lightxgboost/</link>
       <pubDate>Tue, 22 Jan 2019 00:00:00 -0600</pubDate>

@@ -11,43 +11,6 @@
     
 	<atom:link href="https://punyaswaroop12.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Recommender system using Bayesian personalized ranking</title>
-      <link>https://punyaswaroop12.github.io/post/bpr/</link>
-      <pubDate>Mon, 04 Feb 2019 00:00:00 -0600</pubDate>
-      
-      <guid>https://punyaswaroop12.github.io/post/bpr/</guid>
-      <description>This article is originally published in Towards Data science. Click here to read the article.</description>
-    </item>
-    
-    <item>
-      <title>How Twitter does it? Challenges in implementing recommender systems at scale</title>
-      <link>https://punyaswaroop12.github.io/post/twitter/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
-      
-      <guid>https://punyaswaroop12.github.io/post/twitter/</guid>
-      <description>This article is originally published in Towards Data science. Click here to read the article.</description>
-    </item>
-    
-    <item>
-      <title>Sketch recognition using Mobilenet</title>
-      <link>https://punyaswaroop12.github.io/post/sketch-recognition/</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 -0600</pubDate>
-      
-      <guid>https://punyaswaroop12.github.io/post/sketch-recognition/</guid>
-      <description>This article is originally published in Towards Data science. Click here to read the article.</description>
-    </item>
-    
-    <item>
-      <title>Scraping Reddit data using Python and Google BigQuery</title>
-      <link>https://punyaswaroop12.github.io/post/medium/</link>
-      <pubDate>Sat, 26 Jan 2019 00:00:00 -0600</pubDate>
-      
-      <guid>https://punyaswaroop12.github.io/post/medium/</guid>
-      <description>This article is originally published in Towards Data science. Click here to read the article.</description>
-    </item>
-    
     <item>
       <title>ML Algorithms 4:Introduction to Boosting and the famous XGBoost</title>
       <link>https://punyaswaroop12.github.io/post/xgboost-and-lightxgboost/</link>
